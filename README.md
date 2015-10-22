@@ -12,10 +12,12 @@ Website with Laravel framework to create your own CV online
 5. Once the cloning has finished, run the initialisation by typing:
   <pre>$bash init.sh</pre>
 6. The configuration files are located on Linux in the following folder: <pre>~/.homestead</pre> and on Windows: <pre>
-%USERPROFILE%/.homestead</pre> on Windows
+%USERPROFILE%/.homestead</pre>
 
 ### Adding Laravel to your machine and starting up
-- TODO
-- Install Laravel
-- Run <pre> laravel new [App name]</pre>
-- Clone this repository
+Two solutions:
+
+1. Install Laravel
+
+    Run <pre>laravel new [App name]</pre>
+2. Clone this repository
