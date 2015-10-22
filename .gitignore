@@ -2,3 +2,11 @@
 .env.*.php
 .env.php
 .env
+
+#############
+## Project Specifics
+#############
+
+## The laravel framework backup and the framework non-installed
+/framework_bakup/
+/laravel/
