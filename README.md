@@ -15,9 +15,8 @@ Website with Laravel framework to create your own CV online
 %USERPROFILE%/.homestead</pre>
 
 ### Adding Laravel to your machine and starting up
-Two solutions:
-
 1. Install Laravel
-
-    Run <pre>laravel new [App name]</pre>
-2. Clone this repository
+2. Type in the command <pre>laravel new [App name]</pre>
+2. Clone this repository in another folder.
+3. Navigate to the framework folder and edit .env.example then rename it to .env. or you can just copy the one from [App name]
+4. Modify your ngix file to point to framework/public where the index.php file is located.
