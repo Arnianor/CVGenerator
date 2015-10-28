@@ -13,8 +13,37 @@ Website with Laravel framework to create your own CV online
   <pre>cd Homestead</pre>
 6. Once the cloning has finished, run the initialisation by typing:
   <pre>$bash init.sh</pre>
-7. The configuration files are located on Linux in the following folder: <pre>~/.homestead</pre> and on Windows: <pre>
-%USERPROFILE%/.homestead</pre>
+
+### Configuring Homestead.yaml
+
+The configuration files are located on Linux in the following folder: 
+<pre>~/.homestead</pre> 
+and on Windows: 
+<pre>%USERPROFILE%/.homestead</pre>
+
+Open Homestead.yaml.
+The following lines must be set, the values between <b>[ ]</b> are user defined:
+<pre>
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/[The public key name].pub
+
+keys:
+    - ~/.ssh/[The private key name]
+
+folders:
+    - map: [Windows path to repository]/CVGenerator
+      to: /home/vagrant/Code
+
+sites:
+    - map: homestead.app
+      to: /home/vagrant/Code/framework/public
+</pre>
+
 
 ### Adding Laravel to your machine and starting up
 1. Install Laravel
