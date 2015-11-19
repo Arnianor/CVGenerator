@@ -5,7 +5,9 @@
 -->
 <html>
 	<head>
+	<!--
 		<meta charset="UTF-8">
+	-->
 		<style>
 		.error {color: #FF0000;}
 		.mandatory {color : #FF0000;}

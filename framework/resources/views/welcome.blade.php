@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>CVGenerator</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -31,14 +31,18 @@
             }
 
             .title {
-                font-size: 96px;
+                font-size: 3em;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">
+					CVGeneartor vous souhaite la bienvenue<br/>
+					Crééz votre CV en 5 minutes
+				</div>
+				<a href="{{ Html::link('formulaire') }}" > C'est parti</a>
             </div>
         </div>
     </body>
