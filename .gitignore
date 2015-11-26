@@ -10,3 +10,10 @@
 ## The laravel framework backup and the framework non-installed
 /framework_bakup/
 /laravel/
+
+# PHPStorm files
+.idea/
+_ide_helper.php
+
+# Composer files
+#**composer.*
