@@ -24,6 +24,11 @@ class CreateJobsTable extends Migration
             $table->string('location');
             $table->timestamps();
         });
+
+        Schema::table('jobs', function(Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('section_id')->references('id')->on('sections');
+        });
     }
 
     /**

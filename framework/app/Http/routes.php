@@ -12,5 +12,4 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-
 Route::controller('formulaire', 'FormController');

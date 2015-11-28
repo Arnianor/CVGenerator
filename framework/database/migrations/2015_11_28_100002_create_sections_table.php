@@ -13,6 +13,7 @@ class CreateSectionsTable extends Migration
     public function up()
     {
         Schema::create('sections', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             // Index
             $table->increments('id');
             $table->integer('user_id')->unsigned();
@@ -22,6 +23,11 @@ class CreateSectionsTable extends Migration
             // Type of the section
             $table->string('type'); // skill, job, education, language, hobby
             $table->timestamps();
+        });
+
+        Schema::table('sections', function(Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('cv_id')->references('id')->on('cvs');
         });
     }
 

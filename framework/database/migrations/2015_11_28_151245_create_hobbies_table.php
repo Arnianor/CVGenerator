@@ -20,6 +20,11 @@ class CreateHobbiesTable extends Migration
             $table->text('text');
             $table->timestamps();
         });
+
+        Schema::table('hobbies', function(Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('section_id')->references('id')->on('sections');
+        });
     }
 
     /**

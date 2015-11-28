@@ -21,6 +21,10 @@ class CreateCvsTable extends Migration
             $table->integer('template_id');
             $table->timestamps();
         });
+
+        Schema::table('cvs', function(Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
+        });
     }
 
     /**

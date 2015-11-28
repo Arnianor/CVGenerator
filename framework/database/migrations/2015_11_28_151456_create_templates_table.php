@@ -22,6 +22,10 @@ class CreateTemplatesTable extends Migration
             $table->string('style');
             $table->timestamps();
         });
+
+        Schema::table('templates', function(Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
+        });
     }
 
     /**

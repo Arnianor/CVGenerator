@@ -15,14 +15,18 @@ class CreateSkillsTable extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('section_id')->unsigned();
+            $table->integer('user_id',false,true);
+            $table->integer('section_id',false,true);
             $table->string('name');
             $table->string('description');
             $table->string('level');
             $table->timestamps();
         });
 
+        Schema::table('skills', function(Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('section_id')->references('id')->on('sections');
+        });
 
     }
 

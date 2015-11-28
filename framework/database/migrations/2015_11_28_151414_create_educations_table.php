@@ -25,6 +25,11 @@ class CreateEducationsTable extends Migration
             $table->string('title');
             $table->timestamps();
         });
+
+        Schema::table('educations', function(Blueprint $table){
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('section_id')->references('id')->on('sections');
+        });
     }
 
     /**
