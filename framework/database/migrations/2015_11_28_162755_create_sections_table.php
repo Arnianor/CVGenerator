@@ -21,12 +21,6 @@ class CreateSectionsTable extends Migration
 
             // Type of the section
             $table->string('type'); // skill, job, education, language, hobby
-            $table->integer('skills_id')->unsigned();
-            $table->integer('jobs_id')->unsigned();
-            $table->integer('educations_id')->unsigned();
-            $table->integer('languages_id')->unsigned();
-            $table->integer('hobbies_id')->unsigned();
-
             $table->timestamps();
         });
     }

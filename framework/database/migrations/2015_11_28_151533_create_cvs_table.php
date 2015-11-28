@@ -16,7 +16,6 @@ class CreateCvsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('cv_id')->unsigned();
             $table->string('name');
             $table->date('creation_date');
             $table->integer('template_id');
