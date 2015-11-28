@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSkillsTable extends Migration
+class CreateEducationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,18 @@ class CreateSkillsTable extends Migration
      */
     public function up()
     {
-        Schema::create('skills', function (Blueprint $table) {
+        Schema::create('educations', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('user_id')->unsigned();
+            $table->date('start_date');
+            $table->date('end_date');
             $table->string('name');
             $table->string('description');
-            $table->string('level');
+            $table->string('location');
+            $table->string('title');
             $table->timestamps();
         });
-
-
     }
 
     /**
@@ -32,6 +33,6 @@ class CreateSkillsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('skills');
+        Schema::drop('educations');
     }
 }

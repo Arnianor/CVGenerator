@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSkillsTable extends Migration
+class CreateTemplatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,16 @@ class CreateSkillsTable extends Migration
      */
     public function up()
     {
-        Schema::create('skills', function (Blueprint $table) {
+        Schema::create('templates', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned(); // probably not needed. Generic templates...
             $table->string('name');
-            $table->string('description');
-            $table->string('level');
+            $table->string('type');
+            $table->string('css');
+            $table->string('style');
             $table->timestamps();
         });
-
-
     }
 
     /**
@@ -32,6 +31,6 @@ class CreateSkillsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('skills');
+        Schema::drop('templates');
     }
 }
