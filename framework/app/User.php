@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use PhpSpec\Formatter\Html\Template;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -36,4 +37,85 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    /**
+     * One-to-many relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function cvs()
+    {
+        return $this->hasMany(CV::class);
+    }
+
+    /**
+     * One-to-many relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function sections()
+    {
+        return $this->hasMany(Section::class);
+    }
+
+    /**
+     * One-to-many relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function skills()
+    {
+        return $this->hasMany(Skill::class);
+    }
+
+    /**
+     * One-to-many relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function hobbies()
+    {
+        return $this->hasMany(Hobby::class);
+    }
+
+    /**
+     * One-to-many relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+    /**
+     * One-to-many relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function languages()
+    {
+        return $this->hasMany(Language::class);
+    }
+
+    /**
+     * One-to-many relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function educations()
+    {
+        return $this->hasMany(Education::class);
+    }
+
+    /**
+     * One-to-many relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function templates()
+    {
+        return $this->hasMany(Template::class);
+    }
 }
