@@ -26,8 +26,8 @@ class CreateSectionsTable extends Migration
         });
 
         Schema::table('sections', function(Blueprint $table){
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('cv_id')->references('id')->on('cvs');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('cv_id')->references('id')->on('cvs')->onDelete('cascade');
         });
     }
 

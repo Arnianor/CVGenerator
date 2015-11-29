@@ -24,7 +24,7 @@ class CreateTemplatesTable extends Migration
         });
 
         Schema::table('templates', function(Blueprint $table){
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
