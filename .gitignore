@@ -11,9 +11,22 @@
 /framework_bakup/
 /laravel/
 
+#############
 # PHPStorm files
-.idea/
-_ide_helper.php
+#############
 
+.idea/
+
+#############
+# PHPStorm IDE Helper
+#############
+
+_ide_helper.php
+.phpstorm.meta.php
+_ide_helper_models.php
+
+#############
 # Composer files
+#############
+
 #**composer.*
