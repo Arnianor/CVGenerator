@@ -1,5 +1,4 @@
 <?php
-namespace App\Seeders;
 use Illuminate\Database\Seeder;
 
 class LanguagesTableSeeder extends Seeder
@@ -11,6 +10,18 @@ class LanguagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = \App\User::retrieveUsers();
+        foreach($users as $user)
+        {
+            $cvs = $user->retrieveCVs();
+            foreach($cvs as $cv)
+            {
+                $sections = $cv->getSections();
+                foreach($sections as $section)
+                {
+                    factory(App\Language::class)->create(['user_id' => $user->id, 'section_id' => $section->id]);
+                }
+            }
+        }
     }
 }

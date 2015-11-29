@@ -1,5 +1,4 @@
 <?php
-namespace App\Seeders;
 use Illuminate\Database\Seeder;
 
 class CVsTableSeeder extends Seeder
@@ -11,6 +10,10 @@ class CVsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = \App\User::retrieveUsers();
+        foreach($users as $user)
+        {
+            factory(App\CV::class)->create(['user_id' => $user->id]);
+        }
     }
 }

@@ -1,5 +1,4 @@
 <?php
-namespace App\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,8 +14,8 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(UserTableSeeder::class);
-        /*
         $this->call(TemplatesTableSeeder::class);
+
         $this->call(CVsTableSeeder::class);
         $this->call(SectionsTableSeeder::class);
         $this->call(SkillTableSeeder::class);
@@ -24,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(JobsTableSeeder::class);
         $this->call(LanguagesTableSeeder::class);
         $this->call(EducationsTableSeeder::class);
-        */
+
         Model::reguard();
     }
 }

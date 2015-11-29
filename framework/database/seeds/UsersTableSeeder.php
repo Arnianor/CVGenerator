@@ -1,12 +1,11 @@
 <?php
-namespace App\Seeders;
 
 use Faker\Provider\Address;
 use Faker\Provider\DateTime;
 use Faker\Provider\Miscellaneous;
+use Faker\Provider\Person;
 use Faker\Provider\PhoneNumber;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
 
 class UserTableSeeder extends Seeder
 {
@@ -20,9 +19,10 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        /*
         // Seed with a database querry.
         DB::table('users')->insert([
-            'name' => str_random(10),
+            'name' => Person::firstNameMale(),
             'email' => str_random(10) . '@' . str_random(5) . '.com',
             'password' => bcrypt('secret'),
             'date_birth' => DateTime::unixTime(),
@@ -34,11 +34,23 @@ class UserTableSeeder extends Seeder
             'work_permit' => str_random(1),
             'driver_permit' => 'yes',
         ]);
+        */
 
+        //Seeding with a factory.
+        // No relationships are made.
+        factory(App\User::class,5)->create();
         /*
-        //Seed with a factory.
+        // Seed and attach relationships to each user;
         factory(App\User::class,5)->create()->each(function($u){
-            $u->posts()->save(factory(App\Post::class)->make());
+            $u->templates()->save(factory(App\Template::class)->make());
+            // Cannot continue as the foreign key integrities are not respected afterwards.
+            $u->cvs()->save(factory(App\CV::class)->make());
+            $u->sections()->save(factory(App\Section::class)->make());
+            $u->skills()->save(factory(App\Skill::class)->make());
+            $u->hobbies()->save(factory(App\Hobby::class)->make());
+            $u->jobs()->save(factory(App\Work::class)->make());
+            $u->languages()->save(factory(App\Language::class)->make());
+            $u->educations()->save(factory(App\Education::class)->make());
         });
         */
     }
