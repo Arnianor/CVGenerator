@@ -149,7 +149,7 @@ return [
         /*
          * PHP-Storm IDE Helper Service
          */
-        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
     ],
 
