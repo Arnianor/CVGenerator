@@ -6,5 +6,32 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hobby extends Model
 {
-    //
+
+    /**
+     * The table associated with the Hobby model.
+     *
+     * @var string
+     */
+    protected $table = 'hobbies';
+
+    /**
+     * One to Many relation.
+     * Retrieve the user this hobby belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Retrive the CV this hobby belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function cv()
+    {
+        return $this->belongsTo(CV::class);
+    }
 }

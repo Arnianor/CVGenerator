@@ -4,11 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Skill extends Model
+class Work extends Model
 {
+
+    /**
+     * The table corresponding to the Work model.
+     *
+     * @var string
+     */
+    protected $table = 'jobs';
+
     /**
      * One to Many relation.
-     * Retrieve the user this skill belongs to.
+     * Retrieve the user this job belongs to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -18,7 +26,7 @@ class Skill extends Model
     }
 
     /**
-     * Retrive the CV this skill belongs to.
+     * Retrive the CV this job belongs to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
