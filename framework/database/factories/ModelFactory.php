@@ -17,7 +17,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->email,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
-        'date_birth' => DateTime::unixTime(),
+        'date_birth' => $faker->date('d.m.Y'),
         'telephone' => $faker->phoneNumber,
         'address' => $faker->address,
         'nationality' => $faker->countryCode,
@@ -38,7 +38,7 @@ $factory->define(App\Template::class, function (Faker\Generator $faker) {
 $factory->define(App\CV::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'creation_date' => DateTime::unixTime(),
+        'creation_date' => $faker->date('d.m.Y'),
     ];
 });
 
@@ -64,8 +64,8 @@ $factory->define(App\Hobby::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Work::class, function (Faker\Generator $faker) {
     return [
-        'start_date' => $faker->date(),
-        'end_date' => $faker->date(),
+        'start_date' => $faker->date('d.m.Y'),
+        'end_date' => $faker->date('d.m.Y'),
         'name' => $faker->name,
         'location' => $faker->address,
         'description' => $faker->text(),
@@ -82,8 +82,8 @@ $factory->define(App\Language::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Education::class, function (Faker\Generator $faker) {
     return [
-        'start_date' => $faker->date(),
-        'end_date' => $faker->date(),
+        'start_date' => $faker->date('d.m.Y'),
+        'end_date' => $faker->date('d.m.Y'),
         'name' => $faker->name,
         'location' => $faker->address,
         'description' => $faker->text(),
