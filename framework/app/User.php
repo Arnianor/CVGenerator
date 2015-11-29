@@ -2,6 +2,7 @@
 
 namespace App;
 
+use DB;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -37,6 +38,30 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
+
+    /**
+     * Retrive all the user models. Used for seeding.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public static function retrieveUsers()
+    {
+        $users = User::all();
+
+        return $users;
+    }
+
+    /**
+     * Retrive all the user's CV models..
+     *
+     * @return mixed
+     */
+    public function retrieveCVs()
+    {
+        $cvs = CV::where('id',$this->id)->get();
+
+        return $cvs;
+    }
 
     /**
      * One-to-many relation.

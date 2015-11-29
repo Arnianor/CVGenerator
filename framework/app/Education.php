@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Education extends Model
 {
+
+    /**
+     * The table associated with the Education model.
+     *
+     * @var string
+     */
+    protected $table = 'educations';
+
     /**
      * One to Many relation.
      * Retrieve the user this education belongs to.

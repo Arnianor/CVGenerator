@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Skill extends Model
 {
+
+    /**
+     * The table associated with the Skill model.
+     *
+     * @var string
+     */
+    protected $table = 'skills';
+
     /**
      * One to Many relation.
      * Retrieve the user this skill belongs to.
