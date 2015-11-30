@@ -21,9 +21,11 @@ class CVController extends Controller
     protected $cvs;
 
 
-    public function __construct()
+    public function __construct(CVRepository $cvs)
     {
         $this->middleware('auth');
+
+        $this->cvs = $cvs;
     }
 
     /**
@@ -33,9 +35,10 @@ class CVController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        return view('cvs.index',['cvs' => $this->cvs->forUser($request->user())]);
+        $cvs = $this->cvs->forUser($request->user());
+        // $cvs = CV::where('user_id',$request->user()->id)->get();
 
+        return view('cvs.index',['cvs' => $cvs]);
     }
 
     /**
@@ -104,11 +107,17 @@ class CVController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param Request $request
+     * @param CV $cv
+     *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,CV $cv)
     {
-        //
+        $this->authorize('destroy',$cv);
+
+        $this->delete();
+
+        return redirect('/cvs');
     }
 }
