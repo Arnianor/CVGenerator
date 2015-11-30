@@ -58,6 +58,13 @@ class CVController extends Controller
     {
         // Validate entries
         // No entries to validate for a CV.
+
+        // Create the entry.
+        $request->user()->cvs()->create([
+            'name' => $request->name,
+        ]);
+
+        return redirect('/cvs');
     }
 
     /**
