@@ -12,4 +12,18 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-Route::controller('formulaire', 'FormController');
+//Route::controller('formulaire', 'FormController');
+
+// Authentication Routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration Routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// CV Routes
+Route::get('/cvs','CVController@index');
+Route::post('/cv','CVController@store');
+Route::delete('/cv/{cv}','CVController@destroy');
