@@ -33,4 +33,54 @@ class Section extends Model
     {
         return $this->belongsTo(CV::class);
     }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function skill()
+    {
+        return $this->hasOne(Skill::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function hobby()
+    {
+        return $this->hasOne(Hobby::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function job()
+    {
+        return $this->hasOne(Job::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function language()
+    {
+        return $this->hasOne(Language::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function education()
+    {
+        return $this->hasOne(Education::class);
+    }
 }

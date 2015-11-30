@@ -34,4 +34,14 @@ class Skill extends Model
     {
         return $this->belongsTo(CV::class);
     }
+
+    /**
+     * Retrieve the Section this belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
+    }
 }
