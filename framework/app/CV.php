@@ -5,7 +5,7 @@ namespace App;
 use DB;
 use Illuminate\Database\Eloquent\Model;
 
-class CV extends Model
+class Cv extends Model
 {
 
     /**
