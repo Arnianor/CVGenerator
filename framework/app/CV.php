@@ -52,7 +52,7 @@ class CV extends Model
      */
     public function retriveSections()
     {
-        $sections = Section::where('cv_id',$this->id)->get();
+        $sections = $this->sections()->where('cv_id',$this->id)->get();
 
         return $sections;
     }
