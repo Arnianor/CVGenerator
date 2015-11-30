@@ -13,7 +13,8 @@ class CVsTableSeeder extends Seeder
         $users = \App\User::all();
         foreach($users as $user)
         {
-            factory(App\CV::class)->create(['user_id' => $user->id]);
+            $cv = factory(App\Cv::class)->make();
+            $user->cvs()->save($cv);
         }
     }
 }

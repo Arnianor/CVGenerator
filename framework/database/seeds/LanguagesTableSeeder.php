@@ -13,10 +13,10 @@ class LanguagesTableSeeder extends Seeder
         $users = \App\User::all();
         foreach($users as $user)
         {
-            $cvs = $user->retrieveCVs();
+            $cvs = $user->cvs()->get();
             foreach($cvs as $cv)
             {
-                $sections = $cv->getSections();
+                $sections = $cv->sections()->get();
                 foreach($sections as $section)
                 {
                     factory(App\Language::class)->create(['user_id' => $user->id, 'section_id' => $section->id]);

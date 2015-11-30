@@ -11,11 +11,15 @@ class SectionsTableSeeder extends Seeder
     public function run()
     {
         $users = \App\User::all();
-        foreach($users as $user)
+        foreach ($users as $user)
         {
-            $cvs = $user->retrieveCVs();
-            foreach($cvs as $cv)
+            $cvs = $user->cvs()->get();
+            foreach ($cvs as $cv)
             {
+                //$section = factory(App\Section::class)->make();
+                //$cv->sections()->save($section);
+                //$user->sections()->save($section);
+
                 factory(App\Section::class)->create(['user_id' => $user->id, 'cv_id' => $cv->id]);
             }
         }
