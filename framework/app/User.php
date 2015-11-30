@@ -58,7 +58,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function retrieveCVs()
     {
-        $cvs = CV::where('id',$this->id)->get();
+        $cvs = CV::where('user_id',$this->id)->get();
 
         return $cvs;
     }
