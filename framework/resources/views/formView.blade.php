@@ -1,18 +1,19 @@
 @extends('template')
 
-@section('content')
+@section('head')
+	<title>Formulaires</title>
 	
-	{!! Form::open(['url' => 'formulaire/forms']) !!}
+@stop
+
+@section('content')
+
+	{!! Form::open(['url' => 'formulaire/forms', 'class' => 'form-horizontal', 'role' => 'form']) !!}
 		<h3>Données personnelles</h3>
 		<div class='form-group' {!! $errors->has('sex') ? 'has-error' : '' !!} >
-			<label class='radio-inline' >
 				{!! Form::label('sex', 'M') !!}
 				{!! Form::radio('sex', 'Mister', ['autofocus', 'required']) !!}
-			</label>
-			<label class='radio-inline' >
 				{!! Form::label('sex', 'Mme') !!}
 				{!! Form::radio('sex', 'Miss') !!}
-			</label>
 				{!! $errors->first('sex', '<small class="help-block">:message</small>') !!}
 		</div>
 		<div class='form-group' {!! $errors->has('firstName') ? 'has-error' : '' !!} >
@@ -30,6 +31,13 @@
 			{!! Form::date('birthDate','',['required', 'class' => 'form-control', 'placeholder' => 'Votre date de naissance']) !!}
 			{!! $errors->first('birthDate', '<small class="help-block">:message</small>') !!}
 		</div>
+		<div class='form-group' {!! $errors->has('photo') ? 'has-error' : '' !!} >
+			{!! Form::label('photo', 'Photo') !!}
+			{!! Form::file('photo','',[ 'accept' => 'image/*', 'class' => 'form-control button', 'placeholder' => 'Votre photo']) !!}
+			{!! $errors->first('photo', '<small class="help-block">:message</small>') !!}
+		</div>
+		
+		
 		<h3>Contacts</h3>
 		<div class='form-group' {!! $errors->has('street') ? 'has-error' : '' !!} >
 			{!! Form::label('street', 'Rue') !!}
@@ -71,6 +79,8 @@
 			{!! Form::tel('portable','',['class' => 'form-control', 'placeholder' => 'Votre n° de portable']) !!}
 			{!! $errors->first('portable', '<small class="help-block">:message</small>') !!}
 		</div>
+		
+		
 		<h3>Parcours professionnel</h3>
 		<div class='form-group' {!! $errors->has('function') ? 'has-error' : '' !!} >
 			{!! Form::label('function', 'Poste') !!}
@@ -163,6 +173,8 @@
 			{!! Form::date('degreeEndDate','',['class' => 'form-control', 'placeholder' => 'Date de fin de l\'École/Université']) !!}
 			{!! $errors->first('degreeEndDate', '<small class="help-block">:message</small>') !!}
 		</div>
+		
+		
 		<h3>Langues</h3>
 		<div class='form-group' {!! $errors->has('language') ? 'has-error' : '' !!} >
 			{!! Form::label('language', 'Langue') !!}
@@ -176,9 +188,18 @@
 		</div>
 		<div class='form-group' {!! $errors->has('languageLevel') ? 'has-error' : '' !!} >
 			{!! Form::label('languageLevel', 'Niveau européen') !!}
-			{!! Form::text('languageLevel','',['class' => 'form-control', 'placeholder' => 'Niveau européen de la langue']) !!}
+			{!! Form::select('languageLevel',['Aucun', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'],['class' => 'form-control', 'placeholder' => 'Niveau européen de la langue']) !!}
 			{!! $errors->first('languageLevel', '<small class="help-block">:message</small>') !!}
 		</div>
-		{!! Form::submit('C\'est fini') !!}
+		
+		
+		<h3>Hobbies</h3>
+		<div class='form-group' {!! $errors->has('hobbies') ? 'has-error' : '' !!} >
+			{!! Form::label('hobbies', 'Hobbies') !!}
+			{!! Form::textarea('hobbies','',['class' => 'form-control', 'placeholder' => 'Avec un petit texte dites-nous comment vous occuper votre temps libre']) !!}
+			{!! $errors->first('hobbies', '<small class="help-block">:message</small>') !!}
+		</div>
+		{!! Form::submit('C\'est fini',['class' => 'button']) !!}
 	{!! Form::close() !!}
+
 @stop

@@ -1,0 +1,49 @@
+/*
+	Global CSS
+	CVGenerator
+*/
+
+/* text and button on welcompe page */
+.welcome{
+	text-align: center;
+	font-size: 200%;
+}
+
+.button{
+	background: lightblue;
+	border-radius: 10px;
+	text-decoration:none; 
+	color : blue;
+}
+
+/* unvisited link */
+a:link{
+	background: lightblue;
+	border-radius: 10px;
+	text-decoration:none; 
+	color : blue;
+}
+
+/* visited link */
+a:visited {
+    background: lightblue;
+	border-radius: 10px;
+	text-decoration:none; 
+	color : blue;
+}
+
+/* mouse over link */
+a:hover {
+    background: lightblue;
+	border-radius: 10px;
+	text-decoration:none; 
+	color : blue;
+}
+
+/* selected link */
+a:active {
+    background: lightblue;
+	border-radius: 10px;
+	text-decoration:none; 
+	color : blue;
+}
