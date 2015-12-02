@@ -21,6 +21,11 @@ class CVController extends Controller
     protected $cvs;
 
 
+    /**
+     * Create a new controller instance.
+     *
+     * @param CVRepository $cvs
+     */
     public function __construct(CVRepository $cvs)
     {
         $this->middleware('auth');
