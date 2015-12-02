@@ -146,6 +146,11 @@ return [
         App\Providers\RouteServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
 
+        /*
+         * PHP-Storm IDE Helper Service
+         */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
     ],
 
     /*
