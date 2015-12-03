@@ -16,11 +16,20 @@ class SectionsTableSeeder extends Seeder
             $cvs = $user->cvs()->get();
             foreach ($cvs as $cv)
             {
-                //$section = factory(App\Section::class)->make();
-                //$cv->sections()->save($section);
-                //$user->sections()->save($section);
+                $section = factory(App\Section::class)->make();
+                // The section belongs to a user. So associate it.
+                $section->user()->associate($section);
 
-                factory(App\Section::class)->create(['user_id' => $user->id, 'cv_id' => $cv->id]);
+                // The section may belong to MANY CVs.
+                // Attach this section to cv.
+                $cv->sections()->attach($section);
+                // Attach the cv to this section aswell.
+                $section->cvs()->attach($cv);
+
+                // Save the section.
+                $user->sections()->save($section);
+
+                //factory(App\Section::class)->create(['user_id' => $user->id, 'cv_id' => $cv->id]);
             }
         }
     }
