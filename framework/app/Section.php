@@ -29,9 +29,9 @@ class Section extends Model
      * Retrive the CV this section belongs to.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function cv()
+    public function cvs()
     {
-        return $this->belongsTo(Cv::class);
+        return $this->belongsToMany(Cv::class,'cv_sections','section_id','cv_id');
     }
 
     /**
