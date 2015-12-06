@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index')->middleware('guest');
+Route::get('/home','WelcomeController@home')->middleware('guest');
 //Route::controller('formulaire', 'FormController');
 
 // Authentication Routes...
