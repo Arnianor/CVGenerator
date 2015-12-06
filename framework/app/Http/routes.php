@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index')->middleware('guest');
 //Route::controller('formulaire', 'FormController');
 
 // Authentication Routes...
