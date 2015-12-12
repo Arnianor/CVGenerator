@@ -1,15 +1,21 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
 @section('content')
     <div class="jumbotron">
         <h1>Welcome to CVGenerator</h1>
+
         <p class="lead">Want to get started on building your beautiful CV?</p>
+
         <p>
-            {{ link_to_route('register_path','Sign up!',['class' => 'btn btn-lg']) }}
-            <a class="btn btn-lg btn-success" href="#" role="button">Yes please!</a>g
+            @if (Auth::guest())
+                <a class="btn btn-lg btn-success" href="auth/register" role="button">Yes please!</a>
+                <a class="btn btn-lg btn-success" href="auth/login" role="button">Yep, log me in!</a>
+            @else
+                <a class="btn btn-lg btn-success" href="cvs" role="button">See your CVs</a>
+            @endif
         </p>
     </div>
-
+    <!-- Ignore for now
     <div class="row marketing">
         <div class="col-lg-6">
             <h4>Subheading</h4>
@@ -33,8 +39,6 @@
             <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
     </div>
+    -->
 
-    <footer class="footer">
-        <p>&copy; 2015 Company, Inc.</p>
-    </footer>
 @stop

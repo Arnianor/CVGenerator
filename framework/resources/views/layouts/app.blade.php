@@ -5,9 +5,12 @@
     <title>CVGenerator</title>
     <!-- CDN Bootstrap & Jquery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/cvgenerator.css') }}">
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -16,6 +19,12 @@
     <div class="container">
         @yield('content')
     </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <hr class="featurette-divider">
+
+    <footer class="footer">
+        <p>&copy; 2015 Company, Inc.</p>
+    </footer>
 </body>
 </html>
