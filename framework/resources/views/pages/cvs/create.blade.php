@@ -45,25 +45,25 @@
                 <div class="col-md-2 personal-details">
                     <div class='form-group' {!! $errors->has('surname') ? 'has-error' : '' !!} >
                         {!! Form::label('surname', 'Surname') !!}
-                        {!! Form::text('surname','',['required', 'class' => 'form-control', 'placeholder' => 'Samuels']) !!}
+                        {!! Form::text('surname','Samuels',['required', 'class' => 'form-control', 'placeholder' => 'Samuels']) !!}
                         {!! $errors->first('surname', '<small class="help-block">:message</small>') !!}
                     </div>
 
                     <div class='form-group' {!! $errors->has('nickname') ? 'has-error' : '' !!} >
                         {!! Form::label('nickname', 'Nickname') !!}
-                        {!! Form::text('nickname','',['class' => 'form-control', 'placeholder' => $user->name]) !!}
+                        {!! Form::text('nickname',$user->name,['class' => 'form-control', 'placeholder' => $user->name]) !!}
                         {!! $errors->first('nickname', '<small class="help-block">:message</small>') !!}
                     </div>
 
                     <div class='form-group' {!! $errors->has('lastname') ? 'has-error' : '' !!} >
                         {!! Form::label('lastname', 'Lastname') !!}
-                        {!! Form::text('lastname','',['required', 'class' => 'form-control', 'placeholder' => 'Sighmore']) !!}
+                        {!! Form::text('lastname','Sighmore',['required', 'class' => 'form-control', 'placeholder' => 'Sighmore']) !!}
                         {!! $errors->first('lastname', '<small class="help-block">:message</small>') !!}
                     </div>
 
                     <div class='form-group' {!! $errors->has('date_birth') ? 'has-error' : '' !!} >
                         {!! Form::label('date_birth', 'Date of birth') !!}
-                        {!! Form::date('date_birth','',['required', 'class' => 'form-control', 'placeholder' => 'dd.MM.year']) !!}
+                        {!! Form::date('date_birth','22.11.1925',['required', 'class' => 'form-control', 'placeholder' => 'dd.MM.year']) !!}
                         {!! $errors->first('date_birth', '<small class="help-block">:message</small>') !!}
                     </div>
                 </div>
@@ -73,6 +73,14 @@
 
                     <div class="personal-contact-pysical">
 
+
+                        <div class='form-group' {!! $errors->has('address') ? 'has-error' : '' !!} >
+                            {!! Form::label('address', 'Address') !!}
+                            {!! Form::text('address','Chandler Avenue 45, 2023 Gorgier, Switzerland',['class' => 'form-control', 'placeholder' => 'Chandler Avenue 45, 2023 Gorgier, Switzerland']) !!}
+                            {!! $errors->first('address', '<small class="help-block">:message</small>') !!}
+                        </div>
+
+                        <div class="hidden">
                         <div class='form-group' {!! $errors->has('street') ? 'has-error' : '' !!} >
                             {!! Form::label('street', 'Street') !!}
                             {!! Form::text('street','',['class' => 'form-control', 'placeholder' => 'Chandler Avenue 45']) !!}
@@ -95,6 +103,7 @@
                             {!! Form::label('country', 'Country') !!}
                             {!! Form::text('country','',['class' => 'form-control', 'placeholder' => 'Toomuchlinuxland']) !!}
                             {!! $errors->first('country', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
                     </div>
                 </div>

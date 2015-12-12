@@ -19,7 +19,7 @@ class Work extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','location','name','description','start_date','end_date'];
+    protected $fillable = ['name','location','title','description','start_date','end_date'];
 
     /**
      * One to Many relation.

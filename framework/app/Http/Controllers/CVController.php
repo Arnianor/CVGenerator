@@ -40,9 +40,8 @@ class CVController extends Controller
     public function index(Request $request)
     {
         $cvs = $this->cvs->forUser($request->user());
-        // $cvs = CV::where('user_id',$request->user()->id)->get();
 
-        return view('pages.cvs.index',[
+        return view('pages.cvs.index', [
             'cvs' => $cvs]);
     }
 
@@ -53,7 +52,7 @@ class CVController extends Controller
      */
     public function create(Request $request)
     {
-        return view('pages.cvs.create',[
+        return view('pages.cvs.create', [
             'cvs' => $this->cvs,
             'user' => $request->user()]);
     }
@@ -61,7 +60,7 @@ class CVController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -69,9 +68,47 @@ class CVController extends Controller
         // Validate entries
         // No entries to validate for a CV.
 
-        // Create the entry.
+        //var_dump($request);
+
+        // Create the CV first.
         $request->user()->cvs()->create([
             'name' => $request->name,
+        ]);
+
+        // Update the user's data.
+        $request->user()->update([
+            'surname' => $request->surname,
+            'lastname' => $request->lastname,
+            'address' => $request->address,
+        ]);
+
+        // Now we should just create sections and fill with the data given to save time.
+        $request->user()->sections()->create([
+            'type' => 'not filled either'
+        ]);
+
+        $request->user()->jobs()->create([
+            'name' => $request->enterprise,
+            'location' => $request->enterpriseStreet,
+            'title' => $request->job_name,
+            'description' => 'not filled yet',
+            'start_date' => $request->enterpriseBeginDate,
+            'end_date' => $request->enterpriseEndDate,
+        ]);
+
+        $request->user()->educations()->create([
+            'name' => $request->school,
+            'location' => $request->schoolStreet,
+            'title' => $request->degree,
+            'description' => 'not filled yet',
+            'start_date' => $request->degreeBeginDate,
+            'end_date' => $request->degreeEndDate,
+        ]);
+
+        $request->user()->languages()->create([
+            'name' => $request->language,
+            'level' => $request->languageLevel,
+            'creditation' => $request->languageDegree,
         ]);
 
         return redirect('/cvs');
@@ -80,7 +117,7 @@ class CVController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -91,7 +128,7 @@ class CVController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -102,8 +139,8 @@ class CVController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -119,11 +156,11 @@ class CVController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,CV $cv)
+    public function destroy(Request $request, CV $cv)
     {
-        $this->authorize('destroy',$cv);
+        $this->authorize('destroy', $cv);
 
-        $this->delete();
+        $cv->delete();
 
         return redirect('/cvs');
     }

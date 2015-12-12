@@ -38,7 +38,7 @@ class SectionController extends Controller
      */
     public function index()
     {
-        return view('sections.view');
+        return view('pages.sections.view');
     }
 
     /**

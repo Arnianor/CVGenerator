@@ -97,7 +97,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function jobs()
     {
-        return $this->hasMany(Job::class);
+        return $this->hasMany(Work::class);
     }
 
     /**
