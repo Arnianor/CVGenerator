@@ -57,7 +57,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function cvs()
     {
-        return $this->hasMany(CV::class);
+        return $this->hasMany(Cv::class);
     }
 
     /**

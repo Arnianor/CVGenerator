@@ -5,7 +5,7 @@ namespace App;
 use DB;
 use Illuminate\Database\Eloquent\Model;
 
-class CV extends Model
+class Cv extends Model
 {
 
     /**
@@ -26,11 +26,11 @@ class CV extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function sections()
     {
-        return $this->hasMany(Section::class);
+        return $this->belongsToMany(Section::class,'cv_sections','cv_id','section_id');
     }
 
     /**

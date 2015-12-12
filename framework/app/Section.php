@@ -29,8 +29,58 @@ class Section extends Model
      * Retrive the CV this section belongs to.
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function cv()
+    public function cvs()
     {
-        return $this->belongsTo(CV::class);
+        return $this->belongsToMany(Cv::class,'cv_sections','section_id','cv_id');
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function skill()
+    {
+        return $this->hasOne(Skill::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function hobby()
+    {
+        return $this->hasOne(Hobby::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function job()
+    {
+        return $this->hasOne(Job::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function language()
+    {
+        return $this->hasOne(Language::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function education()
+    {
+        return $this->hasOne(Education::class);
     }
 }

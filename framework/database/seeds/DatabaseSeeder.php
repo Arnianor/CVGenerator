@@ -13,16 +13,21 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        // Seed some random users.
         $this->call(UserTableSeeder::class);
+        // Seed some random templates
         $this->call(TemplatesTableSeeder::class);
+        // Seed the user's cvs.
         $this->call(CVsTableSeeder::class);
+        /*
+        // Stop seeding as it is not fully functional.
         $this->call(SectionsTableSeeder::class);
         $this->call(SkillTableSeeder::class);
         $this->call(HobbiesTableSeeder::class);
         $this->call(JobsTableSeeder::class);
         $this->call(LanguagesTableSeeder::class);
         $this->call(EducationsTableSeeder::class);
-
+        */
         Model::reguard();
     }
 }

@@ -13,12 +13,17 @@ class SkillTableSeeder extends Seeder
         $users = \App\User::all();
         foreach($users as $user)
         {
-            $cvs = $user->retrieveCVs();
+            $cvs = $user->cvs()->get();
             foreach($cvs as $cv)
             {
-                $sections = $cv->getSections();
+                $sections = $cv->sections()->get();
                 foreach($sections as $section)
                 {
+
+                    //$skill = factory(App\Skill::class)->make();
+                    //$user->skills()->save($skill);
+                    //$section->skill()->save($skill);
+
                     factory(App\Skill::class)->create(['user_id' => $user->id, 'section_id' => $section->id]);
                 }
             }
