@@ -20,7 +20,6 @@ class CVController extends Controller
      */
     protected $cvs;
 
-
     /**
      * Create a new controller instance.
      *
@@ -43,7 +42,8 @@ class CVController extends Controller
         $cvs = $this->cvs->forUser($request->user());
         // $cvs = CV::where('user_id',$request->user()->id)->get();
 
-        return view('cvs.index',['cvs' => $cvs]);
+        return view('pages.cvs.index',[
+            'cvs' => $cvs]);
     }
 
     /**
@@ -51,9 +51,10 @@ class CVController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('pages.cvs.create',[
+            'cvs' => $this->cvs]);
     }
 
     /**

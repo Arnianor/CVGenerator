@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index')->middleware('guest');
+Route::get('/', 'WelcomeController@index');
 Route::get('/home','WelcomeController@home')->middleware('guest');
 //Route::controller('formulaire', 'FormController');
 
@@ -26,6 +26,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // CV Routes
 Route::get('/cvs','CVController@index');
+Route::get('/cv','CVController@create');
 Route::post('/cv','CVController@store');
 Route::delete('/cv/{cv}','CVController@destroy');
 
