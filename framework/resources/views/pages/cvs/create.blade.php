@@ -10,6 +10,17 @@
     <div class="row">
         {!! Form::open() !!}
 
+        <div class="panel panel-danger">
+            <div class="panel-heading"><div class="panel-title">CV Name</div></div>
+            <div class="panel-body">
+                <div class='form-group' {!! $errors->has('name') ? 'has-error' : '' !!} >
+                    {!! Form::label('name', 'CV name',['class' => 'sr-only']) !!}
+                    {!! Form::text('name','My First CV',['required', 'class' => 'form-control', 'placeholder' => 'My First CV']) !!}
+                    {!! $errors->first('firstName', '<small class="help-block">:message</small>') !!}
+                </div>
+            </div>
+        </div>
+
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <div class="panel-title">Personal Data</div>
@@ -34,7 +45,13 @@
                 <div class="col-md-2 personal-details">
                     <div class='form-group' {!! $errors->has('firstName') ? 'has-error' : '' !!} >
                         {!! Form::label('firstName', 'Surname') !!}
-                        {!! Form::text('firstName','',['required', 'class' => 'form-control', 'placeholder' => $user->name]) !!}
+                        {!! Form::text('firstName','',['required', 'class' => 'form-control', 'placeholder' => 'Samuels']) !!}
+                        {!! $errors->first('firstName', '<small class="help-block">:message</small>') !!}
+                    </div>
+
+                    <div class='form-group' {!! $errors->has('firstName') ? 'has-error' : '' !!} >
+                        {!! Form::label('nickName', 'Surname') !!}
+                        {!! Form::text('nickName','',['class' => 'form-control', 'placeholder' => $user->name]) !!}
                         {!! $errors->first('firstName', '<small class="help-block">:message</small>') !!}
                     </div>
 
@@ -135,27 +152,19 @@
                             </div>
                             <div class="panel-body form-inline">
 
-                                <div class="form-group" {!! $errors->has('enterpriseBeginDate') ? 'has-error' : '' !!}{!! $errors->has('enterpriseEndDate') ? 'has-error' : '' !!} >
+
+
+                                <div class='form-group' {!! $errors->has('enterpriseBeginDate') ? 'has-error' : '' !!} >
                                     {!! Form::label('enterpriseBeginDate', 'Began on the') !!}
                                     {!! Form::date('enterpriseBeginDate','',['class' => 'form-control', 'placeholder' => '25.11.1200']) !!}
                                     {!! $errors->first('enterpriseBeginDate', '<small class="help-block">:message</small>') !!}
-
+                                </div>
+                                <div class='form-group' {!! $errors->has('enterpriseEndDate') ? 'has-error' : '' !!} >
                                     {!! Form::label('enterpriseEndDate', 'End date') !!}
                                     {!! Form::date('enterpriseEndDate','',['class' => 'form-control', 'placeholder' => 'Present']) !!}
                                     {!! $errors->first('enterpriseEndDate', '<small class="help-block">:message</small>') !!}
                                 </div>
-                                <!--
-                                <div class='form-group' {!! $errors->has('enterpriseBeginDate') ? 'has-error' : '' !!} >
-                                    {!! Form::label('enterpriseBeginDate', 'Began on the') !!}
-                                {!! Form::date('enterpriseBeginDate','',['class' => 'form-control', 'placeholder' => '25.11.1200']) !!}
-                                {!! $errors->first('enterpriseBeginDate', '<small class="help-block">:message</small>') !!}
-                                        </div>
-                                        <div class='form-group' {!! $errors->has('enterpriseEndDate') ? 'has-error' : '' !!} >
-                                    {!! Form::label('enterpriseEndDate', 'End date') !!}
-                                {!! Form::date('enterpriseEndDate','',['class' => 'form-control', 'placeholder' => 'Present']) !!}
-                                {!! $errors->first('enterpriseEndDate', '<small class="help-block">:message</small>') !!}
-                                        </div>
-                                        -->
+
                             </div>
                         </div>
                     </div>
