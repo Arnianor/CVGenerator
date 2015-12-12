@@ -54,7 +54,8 @@ class CVController extends Controller
     public function create(Request $request)
     {
         return view('pages.cvs.create',[
-            'cvs' => $this->cvs]);
+            'cvs' => $this->cvs,
+            'user' => $request->user()]);
     }
 
     /**

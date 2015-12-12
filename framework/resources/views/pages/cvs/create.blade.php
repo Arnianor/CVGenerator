@@ -34,7 +34,7 @@
                 <div class="col-md-2 personal-details">
                     <div class='form-group' {!! $errors->has('firstName') ? 'has-error' : '' !!} >
                         {!! Form::label('firstName', 'Surname') !!}
-                        {!! Form::text('firstName','',['required', 'class' => 'form-control', 'placeholder' => 'Roger']) !!}
+                        {!! Form::text('firstName','',['required', 'class' => 'form-control', 'placeholder' => $user->name]) !!}
                         {!! $errors->first('firstName', '<small class="help-block">:message</small>') !!}
                     </div>
 
