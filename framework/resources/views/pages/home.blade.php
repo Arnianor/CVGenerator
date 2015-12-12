@@ -4,7 +4,10 @@
     <div class="jumbotron">
         <h1>Welcome to CVGenerator</h1>
         <p class="lead">Want to get started on building your beautiful CV?</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Yes please!</a></p>
+        <p>
+            {{ link_to_route('register_path','Sign up!',['class' => 'btn btn-lg']) }}
+            <a class="btn btn-lg btn-success" href="#" role="button">Yes please!</a>g
+        </p>
     </div>
 
     <div class="row marketing">
