@@ -17,6 +17,8 @@ class CreateCvsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('name');
+            $table->string('surname');
+            $table->string('lastname');
             $table->date('creation_date');
             $table->integer('template_id');
             $table->timestamps();
