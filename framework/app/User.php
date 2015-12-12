@@ -38,19 +38,6 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
-
-    /**
-     * Retrive all the user models. Used for seeding.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public static function retrieveUsers()
-    {
-        $users = User::all();
-
-        return $users;
-    }
-
     /**
      * Retrive all the user's CV models..
      *

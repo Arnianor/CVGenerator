@@ -10,7 +10,7 @@ class LanguagesTableSeeder extends Seeder
      */
     public function run()
     {
-        $users = \App\User::retrieveUsers();
+        $users = \App\User::all();
         foreach($users as $user)
         {
             $cvs = $user->retrieveCVs();
