@@ -15,6 +15,13 @@ class Hobby extends Model
     protected $table = 'hobbies';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['text'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this hobby belongs to.
      *

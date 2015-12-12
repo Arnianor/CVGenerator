@@ -16,6 +16,12 @@ class Cv extends Model
     protected $table = 'cvs';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','creation_date'];
+    /**
      * Many to One relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

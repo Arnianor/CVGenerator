@@ -15,6 +15,13 @@ class Section extends Model
     protected $table = 'sections';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['type'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this section belongs to.
      *

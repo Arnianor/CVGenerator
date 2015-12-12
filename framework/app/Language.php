@@ -15,6 +15,13 @@ class Language extends Model
     protected $table = 'languages';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','level','creditation'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this language belongs to.
      *

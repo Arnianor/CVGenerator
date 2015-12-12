@@ -15,6 +15,13 @@ class Skill extends Model
     protected $table = 'skills';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','level','description'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this skill belongs to.
      *

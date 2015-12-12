@@ -15,6 +15,13 @@ class Work extends Model
     protected $table = 'jobs';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','location','name','description','start_date','end_date'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this job belongs to.
      *

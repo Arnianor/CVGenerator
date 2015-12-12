@@ -15,6 +15,13 @@ class Education extends Model
     protected $table = 'educations';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','location','title','description','start_date','end_date'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this education belongs to.
      *

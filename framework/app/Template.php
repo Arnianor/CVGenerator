@@ -15,6 +15,13 @@ class Template extends Model
     protected $table = 'templates';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','type','css','style'];
+
+    /**
      * Many to Many relation.
      * Retrieve the users this template belongs to.
      *
