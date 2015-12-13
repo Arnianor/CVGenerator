@@ -138,6 +138,11 @@ class CVController extends Controller
         $educationSection->education()->save($education);
         $education->save();
 
+        // Now save the sections.
+        $workSection->save();
+        $educationSection->save();
+        $languageSection->save();
+
         return redirect('/cvs');
     }
 
