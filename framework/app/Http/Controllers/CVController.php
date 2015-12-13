@@ -110,7 +110,7 @@ class CVController extends Controller
         ]);
 
         // New build the sections.
-        $workSection =  new Section(['type' => 'work']);
+        $workSection = new Section(['type' => 'work']);
         $languageSection = new Section(['type' => 'langauge']);
         $educationSection = new Section(['type' => 'education']);
 
@@ -144,12 +144,15 @@ class CVController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param Request $request
+     * @param CV $cv
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, CV $cv)
     {
-        //
+        return view('pages.cvs.show', [
+            'cv' => $cv,
+            'user' => $request->user(),]);
     }
 
     /**

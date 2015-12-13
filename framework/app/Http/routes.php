@@ -28,6 +28,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('/cvs','CVController@index');
 Route::get('/cv','CVController@create');
 Route::post('/cv','CVController@store');
+Route::get('/cv/{cv}','CVController@show');
 Route::delete('/cv/{cv}','CVController@destroy');
 
 // Section Routes
