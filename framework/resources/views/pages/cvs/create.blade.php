@@ -118,7 +118,7 @@
 
                         <div class='form-group' {!! $errors->has('telephone') ? 'has-error' : '' !!} >
                             {!! Form::label('telephone', 'Telephone number') !!}
-                            {!! Form::tel('telephone','',['class' => 'form-control', 'placeholder' => '078/755 82 82']) !!}
+                            {!! Form::tel('telephone','078/609 21 55',['class' => 'form-control', 'placeholder' => '078/755 82 82']) !!}
                             {!! $errors->first('telephone', '<small class="help-block">:message</small>') !!}
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                             <div class="panel-body">
                                 <div class='form-group' {!! $errors->has('job_name') ? 'has-error' : '' !!} >
                                     {!! Form::label('job_name', 'Job Title',['class' => 'sr-only']) !!}
-                                    {!! Form::text('job_name','',['class' => 'form-control', 'placeholder' => 'Evil Mastermind']) !!}
+                                    {!! Form::text('job_name','Evil Asshole',['class' => 'form-control', 'placeholder' => 'Evil Mastermind']) !!}
                                     {!! $errors->first('job_name', '<small class="help-block">:message</small>') !!}
                                 </div>
                             </div>
@@ -160,20 +160,16 @@
                                 <div class="panel-title">Timeline</div>
                             </div>
                             <div class="panel-body form-inline">
-
-
-
                                 <div class='form-group' {!! $errors->has('enterpriseBeginDate') ? 'has-error' : '' !!} >
                                     {!! Form::label('enterpriseBeginDate', 'Began on the') !!}
-                                    {!! Form::date('enterpriseBeginDate','',['class' => 'form-control', 'placeholder' => '25.11.1200']) !!}
+                                    {!! Form::date('enterpriseBeginDate','25.11.1200',['class' => 'form-control', 'placeholder' => '25.11.1200']) !!}
                                     {!! $errors->first('enterpriseBeginDate', '<small class="help-block">:message</small>') !!}
                                 </div>
                                 <div class='form-group' {!! $errors->has('enterpriseEndDate') ? 'has-error' : '' !!} >
                                     {!! Form::label('enterpriseEndDate', 'End date') !!}
-                                    {!! Form::date('enterpriseEndDate','',['class' => 'form-control', 'placeholder' => 'Present']) !!}
+                                    {!! Form::date('enterpriseEndDate','25.11.1900',['class' => 'form-control', 'placeholder' => 'Present']) !!}
                                     {!! $errors->first('enterpriseEndDate', '<small class="help-block">:message</small>') !!}
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -187,10 +183,19 @@
                     <div class="panel-body job-company-info">
                         <div class='form-group' {!! $errors->has('enterprise') ? 'has-error' : '' !!} >
                             {!! Form::label('enterprise', 'Company') !!}
-                            {!! Form::text('enterprise','',['class' => 'form-control', 'placeholder' => 'Aperture Science']) !!}
+                            {!! Form::text('enterprise','Aperture Science',['class' => 'form-control', 'placeholder' => 'Aperture Science']) !!}
                             {!! $errors->first('enterprise', '<small class="help-block">:message</small>') !!}
                         </div>
 
+
+
+                        <div class='form-group' {!! $errors->has('enterpriseAddress') ? 'has-error' : '' !!} >
+                            {!! Form::label('enterpriseAddress', 'Address') !!}
+                            {!! Form::text('enterpriseAddress','Aperture laboratiories, Av of Sunshine 24, 40000 Marstrasse, Germany' ,['class' => 'form-control', 'placeholder' => 'Rue de l\'entreprise']) !!}
+                            {!! $errors->first('enterpriseAddress', '<small class="help-block">:message</small>') !!}
+                        </div>
+
+                        <div class="hidden">
                         <div class='form-group' {!! $errors->has('enterpriseStreet') ? 'has-error' : '' !!} >
                             {!! Form::label('enterpriseStreet', 'Street') !!}
                             {!! Form::text('enterpriseStreet','',['class' => 'form-control', 'placeholder' => 'Rue de l\'entreprise']) !!}
@@ -213,6 +218,7 @@
                             {!! Form::label('enterpriseCountry', 'Country') !!}
                             {!! Form::text('enterpriseCountry','',['class' => 'form-control', 'placeholder' => 'Hawaii']) !!}
                             {!! $errors->first('enterpriseCountry', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -246,7 +252,7 @@
                             </div>
                             <div class="panel-body">
                                 <div class='form-group' {!! $errors->has('degree') ? 'has-error' : '' !!} >
-                                    {!! Form::text('degree','',['class' => 'form-control', 'placeholder' => 'Bachelor of Science of Installing  all applications in C:\\']) !!}
+                                    {!! Form::text('degree','Bachelor of Awesome',['class' => 'form-control', 'placeholder' => 'Bachelor of Science of Installing  all applications in C:\\']) !!}
                                     {!! $errors->first('degree', '<small class="help-block">:message</small>') !!}
                                 </div>
                             </div>
@@ -262,13 +268,13 @@
 
                                 <div class='form-group' {!! $errors->has('degreeBeginDate') ? 'has-error' : '' !!} >
                                     {!! Form::label('degreeBeginDate', 'Beginning') !!}
-                                    {!! Form::date('degreeBeginDate','',['class' => 'form-control', 'placeholder' => 'dd.MM.year']) !!}
+                                    {!! Form::date('degreeBeginDate','11.01.2000',['class' => 'form-control', 'placeholder' => 'dd.MM.year']) !!}
                                     {!! $errors->first('degreeBeginDate', '<small class="help-block">:message</small>') !!}
                                 </div>
 
                                 <div class='form-group' {!! $errors->has('degreeEndDate') ? 'has-error' : '' !!} >
                                     {!! Form::label('degreeEndDate', 'End') !!}
-                                    {!! Form::date('degreeEndDate','',['class' => 'form-control', 'placeholder' => 'dd.MM.year']) !!}
+                                    {!! Form::date('degreeEndDate','11.01.2010',['class' => 'form-control', 'placeholder' => 'dd.MM.year']) !!}
                                     {!! $errors->first('degreeEndDate', '<small class="help-block">:message</small>') !!}
                                 </div>
                             </div>
@@ -286,10 +292,17 @@
                     <div class="panel-body">
                         <div class='form-group' {!! $errors->has('school') ? 'has-error' : '' !!} >
                             {!! Form::label('school', 'School/University/Academic place name') !!}
-                            {!! Form::text('school','',['class' => 'form-control', 'placeholder' => 'Show this text bitch']) !!}
+                            {!! Form::text('school','HE-Argh',['class' => 'form-control', 'placeholder' => 'Show this text bitch']) !!}
                             {!! $errors->first('school', '<small class="help-block">:message</small>') !!}
                         </div>
 
+                        <div class='form-group' {!! $errors->has('schoolAddress') ? 'has-error' : '' !!} >
+                            {!! Form::label('schoolAddress', 'Address') !!}
+                            {!! Form::text('schoolAddress','Aperture laboratiories, Av of Sunshine 24, 40000 Marstrasse, Germany' ,['class' => 'form-control', 'placeholder' => 'Rue de l\'entreprise']) !!}
+                            {!! $errors->first('schoolAddress', '<small class="help-block">:message</small>') !!}
+                        </div>
+
+                        <div class="hidden">
                         <div class='form-group' {!! $errors->has('schoolStreet') ? 'has-error' : '' !!} >
                             {!! Form::label('schoolStreet', 'Rue') !!}
                             {!! Form::text('schoolStreet','',['class' => 'form-control', 'placeholder' => 'Maximum Underground 26']) !!}
@@ -314,6 +327,7 @@
                             {!! Form::text('schoolCountry','',['class' => 'form-control', 'placeholder' => 'Hawaii']) !!}
                             {!! $errors->first('schoolCountry', '<small class="help-block">:message</small>') !!}
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -333,19 +347,19 @@
 
                 <div class='form-group' {!! $errors->has('language') ? 'has-error' : '' !!} >
                     {!! Form::label('language', 'Langue') !!}
-                    {!! Form::text('language','',['class' => 'form-control', 'placeholder' => 'Langue connue']) !!}
+                    {!! Form::text('language','Romanian',['class' => 'form-control', 'placeholder' => 'Langue connue']) !!}
                     {!! $errors->first('language', '<small class="help-block">:message</small>') !!}
                 </div>
 
                 <div class='form-group' {!! $errors->has('languageDegree') ? 'has-error' : '' !!} >
                     {!! Form::label('languageDegree', 'Diplôme') !!}
-                    {!! Form::text('languageDegree','',['class' => 'form-control', 'placeholder' => 'Diplôme de langue']) !!}
+                    {!! Form::text('languageDegree','Awesomitude',['class' => 'form-control', 'placeholder' => 'Diplôme de langue']) !!}
                     {!! $errors->first('languageDegree', '<small class="help-block">:message</small>') !!}
                 </div>
 
                 <div class='form-group' {!! $errors->has('languageLevel') ? 'has-error' : '' !!} >
                     {!! Form::label('languageLevel', 'Niveau européen') !!}
-                    {!! Form::text('languageLevel','',['class' => 'form-control', 'placeholder' => 'Niveau européen de la langue']) !!}
+                    {!! Form::text('languageLevel','100',['class' => 'form-control', 'placeholder' => 'Niveau européen de la langue']) !!}
                     {!! $errors->first('languageLevel', '<small class="help-block">:message</small>') !!}
                 </div>
             </div>
