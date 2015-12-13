@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\SectionRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
