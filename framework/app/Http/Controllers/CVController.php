@@ -180,8 +180,6 @@ class CVController extends Controller
 
             if(count($w) != 0)
             array_push($workSection, $w);
-
-            //array_push($workSection, $w);
             if(count($l) != 0)
             array_push($languageSection, $l);
             if(count($e) != 0)
@@ -191,9 +189,6 @@ class CVController extends Controller
             if(count($s) != 0)
             array_push($skillSection, $s);
         }
-
-        //dump($workSection);
-
 
         return view('pages.cvs.show', [
             'cv' => $cv,

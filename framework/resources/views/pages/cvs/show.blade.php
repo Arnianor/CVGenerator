@@ -28,7 +28,7 @@ function sentenceCase($s)
 
 @section('content')
     <link rel="stylesheet" href="{{ URL::asset('assets/css/cvs.css') }}">
- 
+
     <header class="page-header">
         <h1>{{$cv->name}}</h1>
     </header>
@@ -87,7 +87,6 @@ function sentenceCase($s)
                         @if(count($job) != 0)
                             {{dump($job[0])}}
                         @endif
-
                     @endforeach
                 </div>
             </div>
@@ -106,10 +105,8 @@ function sentenceCase($s)
                         @if(count($skill) != 0)
                             {{dump($skill[0])}}
                         @endif
-
                     @endforeach
                 </div>
-
             </div>
         @endif
 
@@ -126,10 +123,8 @@ function sentenceCase($s)
                         @if(count($language) != 0)
                             {{dump($language[0])}}
                         @endif
-
                     @endforeach
                 </div>
-
             </div>
         @endif
 
@@ -146,7 +141,6 @@ function sentenceCase($s)
                         @if(count($hobby) != 0)
                             {{dump($hobby[0])}}
                         @endif
-
                     @endforeach
                 </div>
             </div>
@@ -165,7 +159,6 @@ function sentenceCase($s)
                         @if(count($education) != 0)
                             {{dump($education[0])}}
                         @endif
-
                     @endforeach
                 </div>
             </div>
