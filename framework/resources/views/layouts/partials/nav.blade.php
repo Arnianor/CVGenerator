@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ URL::asset('assets/css/nav.css') }}">
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
     <div class="container">
 
