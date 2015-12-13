@@ -12,14 +12,14 @@ class CreateCvSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cv_sections', function (Blueprint $table) {
+        Schema::create('cv_section', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('section_id')->unsigned();
-            $table->integer('cv_id')->unsigned();
+            $table->integer('section_id')->unsigned()->index();
+            $table->integer('cv_id')->unsigned()->index();
             $table->timestamps();
         });
 
-        Schema::table('cv_sections', function(Blueprint $table){
+        Schema::table('cv_section', function(Blueprint $table){
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->foreign('cv_id')->references('id')->on('cvs')->onDelete('cascade');
         });
@@ -37,11 +37,13 @@ class CreateCvSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cv_sections');
+
+        Schema::drop('cv_section');
 
         Schema::table('sections',function(Blueprint $table){
             $table->integer('cv_id')->unsigned();
             $table->foreign('cv_id')->references('id')->on('cvs')->onDelete('cascade');
         });
+
     }
 }

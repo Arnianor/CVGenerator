@@ -21,6 +21,7 @@ class Cv extends Model
      * @var array
      */
     protected $fillable = ['name','creation_date'];
+
     /**
      * Many to One relation.
      *
@@ -36,7 +37,7 @@ class Cv extends Model
      */
     public function sections()
     {
-        return $this->belongsToMany(Section::class,'cv_sections','cv_id','section_id');
+        return $this->belongsToMany(Section::class);
     }
 
     /**

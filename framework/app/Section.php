@@ -34,11 +34,12 @@ class Section extends Model
 
     /**
      * Retrive the CV this section belongs to.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function cvs()
     {
-        return $this->belongsToMany(Cv::class,'cv_sections','section_id','cv_id');
+        return $this->belongsToMany(Cv::class);
     }
 
     /**
@@ -68,7 +69,7 @@ class Section extends Model
      */
     public function job()
     {
-        return $this->hasOne(Job::class);
+        return $this->hasOne(Work::class);
     }
 
     /**
