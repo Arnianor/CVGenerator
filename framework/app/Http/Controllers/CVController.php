@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\CV;
+use App\Education;
+use App\Hobby;
+use App\Language;
 use App\Repositories\CVRepository;
 
 use App\Section;
+use App\Skill;
 use App\Work;
 use Illuminate\Http\Request;
 
@@ -155,9 +159,51 @@ class CVController extends Controller
      */
     public function show(Request $request, CV $cv)
     {
+        // Get the cv sections.
+        $sections = $cv->sections()->get();
+
+        // Build empty subsections.
+        $workSection = array();
+        $languageSection = array();
+        $educationSection = array();
+        $hobbySection = array();
+        $skillSection = array();
+
+        // For each section, determine it's type, and append it's data to the corresponding subsection.
+        foreach ($sections as $section)
+        {
+            $w = Work::whereSectionId($section->id)->get(['name', 'location', 'title', 'description', 'start_date', 'end_date'])->toArray();
+            $l = Language::whereSectionId($section->id)->get(['name', 'level', 'creditation'])->toArray();
+            $e = Education::whereSectionId($section->id)->get(['name', 'location', 'title', 'description', 'start_date', 'end_date'])->toArray();
+            $h = Hobby::whereSectionId($section->id)->get(['text'])->toArray();
+            $s = Skill::whereSectionId($section->id)->get(['name', 'level', 'description'])->toArray();
+
+            if(count($w) != 0)
+            array_push($workSection, $w);
+
+            //array_push($workSection, $w);
+            if(count($l) != 0)
+            array_push($languageSection, $l);
+            if(count($e) != 0)
+            array_push($educationSection, $e);
+            if(count($h) != 0)
+            array_push($hobbySection, $h);
+            if(count($s) != 0)
+            array_push($skillSection, $s);
+        }
+
+        //dump($workSection);
+
+
         return view('pages.cvs.show', [
             'cv' => $cv,
-            'user' => $request->user(),]);
+            'user' => $request->user(),
+            'workSection' => $workSection,
+            'languageSection' => $languageSection,
+            'educationSection' => $educationSection,
+            'hobbySection' => $hobbySection,
+            'skillSection' => $skillSection,
+        ]);
     }
 
     /**
