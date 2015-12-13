@@ -115,7 +115,7 @@ class CVController extends Controller
 
         // New build the sections.
         $workSection = new Section(['type' => 'work']);
-        $languageSection = new Section(['type' => 'langauge']);
+        $languageSection = new Section(['type' => 'language']);
         $educationSection = new Section(['type' => 'education']);
 
         // First attach the sections to the user

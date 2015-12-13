@@ -147,7 +147,7 @@
                             <div class="panel-body">
                                 <div class='form-group' {!! $errors->has('job_name') ? 'has-error' : '' !!} >
                                     {!! Form::label('job_name', 'Job Title',['class' => 'sr-only']) !!}
-                                    {!! Form::text('job_name','Evil Asshole',['class' => 'form-control', 'placeholder' => 'Evil Mastermind']) !!}
+                                    {!! Form::text('job_name','Evil Genius',['class' => 'form-control', 'placeholder' => 'Evil Mastermind']) !!}
                                     {!! $errors->first('job_name', '<small class="help-block">:message</small>') !!}
                                 </div>
                             </div>
