@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>CVGenerator</title>
-    <!-- CDN Bootstrap & Jquery -->
+    <!-- CDN Bootstrap & Font Awesome & Jquery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/cvgenerator.css') }}">
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
