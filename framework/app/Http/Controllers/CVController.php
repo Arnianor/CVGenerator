@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\CV;
 use App\Repositories\CVRepository;
 
+use App\Section;
+use App\Work;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -71,7 +73,7 @@ class CVController extends Controller
         //var_dump($request);
 
         // Create the CV first.
-        $request->user()->cvs()->create([
+        $cv = $request->user()->cvs()->firstOrCreate([
             'name' => $request->name,
         ]);
 
@@ -82,34 +84,59 @@ class CVController extends Controller
             'address' => $request->address,
         ]);
 
-        // Now we should just create sections and fill with the data given to save time.
-        $request->user()->sections()->create([
-            'type' => 'not filled either'
-        ]);
-
-        $request->user()->jobs()->create([
+        // Build the subsections first.
+        $work = $request->user()->jobs()->firstOrNew([
             'name' => $request->enterprise,
-            'location' => $request->enterpriseStreet,
+            'location' => $request->enterpriseAddress,
             'title' => $request->job_name,
             'description' => 'not filled yet',
             'start_date' => $request->enterpriseBeginDate,
             'end_date' => $request->enterpriseEndDate,
         ]);
 
-        $request->user()->educations()->create([
+        $education = $request->user()->educations()->firstOrNew([
             'name' => $request->school,
-            'location' => $request->schoolStreet,
+            'location' => $request->schoolAddress,
             'title' => $request->degree,
             'description' => 'not filled yet',
             'start_date' => $request->degreeBeginDate,
             'end_date' => $request->degreeEndDate,
         ]);
 
-        $request->user()->languages()->create([
+        $language = $request->user()->languages()->firstOrNew([
             'name' => $request->language,
             'level' => $request->languageLevel,
             'creditation' => $request->languageDegree,
         ]);
+
+        // New build the sections.
+        $workSection =  new Section(['type' => 'work']);
+        $languageSection = new Section(['type' => 'langauge']);
+        $educationSection = new Section(['type' => 'education']);
+
+        // First attach the sections to the user
+        $request->user()->sections()->saveMany([
+            $workSection,
+            $educationSection,
+            $languageSection,
+        ]);
+
+        // Now attach them to the cv
+        $cv->sections()->saveMany([
+            $workSection,
+            $educationSection,
+            $languageSection,
+        ]);
+
+        // Now attach each section with it's correct subsection.
+        $languageSection->language()->save($language);
+        $language->save();
+
+        $workSection->job()->save($work);
+        $work->save();
+
+        $educationSection->education()->save($education);
+        $education->save();
 
         return redirect('/cvs');
     }
