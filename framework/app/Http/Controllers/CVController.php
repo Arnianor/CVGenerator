@@ -234,10 +234,14 @@ class CVController extends Controller
      */
     public function destroy(Request $request, CV $cv)
     {
+
+        return view('errors.wip');
+        /*
         $this->authorize('destroy', $cv);
 
         $cv->delete();
 
         return redirect('/cvs');
+        */
     }
 }

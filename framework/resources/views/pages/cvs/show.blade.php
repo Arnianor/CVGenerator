@@ -84,9 +84,21 @@ function sentenceCase($s)
 
                 <div class="panel-body">
                     @foreach($workSection as $job)
-                        @if(count($job) != 0)
-                            {{dump($job[0])}}
-                        @endif
+                    @if(count($job) != 0)
+                            <!-- {{dump($job[0])}} -->
+                    <h2> {{$job[0]['title']}} at {{$job[0]['name']}}</h2>
+                    <h4>Resposabilities: {{$job[0]['description']}}</h4>
+                    <h6>From {{$job[0]['start_date']}} to {{$job[0]['end_date']}}</h6>
+
+                    <!--
+                            {{$job[0]['name']}}
+                    {{$job[0]['location']}}
+                    {{$job[0]['title']}}
+                    {{$job[0]['description']}}
+                    {{$job[0]['start_date']}}
+                    {{$job[0]['end_date']}}
+                            -->
+                    @endif
                     @endforeach
                 </div>
             </div>
@@ -96,15 +108,19 @@ function sentenceCase($s)
             <div class="panel panel-default cv-skills">
                 <div class="panel-heading">
                     <div class="panel-title">
-                        Skills
+                        My skills
                     </div>
                 </div>
 
                 <div class="panel-body">
                     @foreach($skillSection as $skill)
-                        @if(count($skill) != 0)
-                            {{dump($skill[0])}}
-                        @endif
+                    @if(count($skill) != 0)
+                            <!-- {{dump($skill[0])}} -->
+
+                    {{$skill[0]['name']}}
+                    {{$skill[0]['level']}}
+                    {{$skill[0]['description']}}
+                    @endif
                     @endforeach
                 </div>
             </div>
@@ -120,9 +136,17 @@ function sentenceCase($s)
 
                 <div class="panel-body">
                     @foreach($languageSection as $language)
-                        @if(count($language) != 0)
-                            {{dump($language[0])}}
-                        @endif
+                    @if(count($language) != 0)
+                            <!-- {{dump($language[0])}} -->
+
+                    <h2> I speak {{$job[0]['title']}}, with a kownledge level of {{$language[0]['level']}}</h2>
+                    <h4>And obtained the following certification: {{$language[0]['creditation']}}</h4>
+                    <!--
+                            {{$language[0]['name']}}
+                    {{$language[0]['level']}}
+                    {{$language[0]['creditation']}}
+                            -->
+                    @endif
                     @endforeach
                 </div>
             </div>
@@ -138,9 +162,10 @@ function sentenceCase($s)
 
                 <div class="panel-body">
                     @foreach($hobbySection as $hobby)
-                        @if(count($hobby) != 0)
-                            {{dump($hobby[0])}}
-                        @endif
+                    @if(count($hobby) != 0)
+                            <!-- {{dump($hobby[0])}} -->
+                    <h2>{{$hobby[0]['text']}}</h2>
+                    @endif
                     @endforeach
                 </div>
             </div>
@@ -156,9 +181,21 @@ function sentenceCase($s)
 
                 <div class="panel-body">
                     @foreach($educationSection as $education)
-                        @if(count($education) != 0)
-                            {{dump($education[0])}}
-                        @endif
+                    @if(count($education) != 0)
+                            <!-- {{dump($education[0])}} -->
+
+                    <h2> {{$education[0]['title']}} at {{$education[0]['name']}}</h2>
+                    <h4>Activities: {{$job[0]['description']}}</h4>
+                    <h6>From {{$job[0]['start_date']}} to {{$job[0]['end_date']}}</h6>
+                    <!--
+                            {{$education[0]['name']}}
+                    {{$education[0]['location']}}
+                    {{$education[0]['title']}}
+                    {{$education[0]['description']}}
+                    {{$education[0]['start_date']}}
+                    {{$education[0]['end_date']}}
+                            -->
+                    @endif
                     @endforeach
                 </div>
             </div>

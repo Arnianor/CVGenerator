@@ -25,7 +25,7 @@
     <hr class="featurette-divider">
 
     <footer class="footer">
-        <p>&copy; 2015 Company, Inc.</p>
+        <p>&copy; 2015 MdM, Inc.</p>
     </footer>
 </body>
 </html>

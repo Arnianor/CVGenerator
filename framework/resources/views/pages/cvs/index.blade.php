@@ -3,6 +3,7 @@
 @section('content')
     <link rel="stylesheet" href="{{ URL::asset('assets/css/cvs.css') }}">
     <div class="container marketing cv">
+        <?php $centerOnPage = false ?>
 
         <!-- Current CVS -->
         <div class="row">
@@ -66,33 +67,40 @@
                         </div>
                     </div>
                 </div>
+                @else
+                <?php $centerOnPage = true ?>
                 @endif
 
                         <!-- Create a brand new CV -->
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                Want to make a brand new one?
+                @if($centerOnPage)
+                    <div class="col-md">
+                        @else
+                            <div class="col-md-6">
+                                @endif
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            Want to make a brand new one?
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div>
+                                            <!--
+                                            <img width="140" height="140" class="img-circle" alt="Generic placeholder image" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                            -->
+                                            <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+
+                                            <h2>New CV</h2>
+
+                                            <p>Build a new professional-'ish' looking CV.</p>
+
+                                            <p><a class="btn btn-default" role="button" href="cv">Let's go.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="panel-body">
-                            <div>
-                                <!--
-                                <img width="140" height="140" class="img-circle" alt="Generic placeholder image" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
-                                -->
-                                <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
 
-                                <h2>New CV</h2>
-
-                                <p>Build a new professional-'ish' looking CV.</p>
-
-                                <p><a class="btn btn-default" role="button" href="cv">Let's go.</a></p>
-                            </div>
-                        </div>
                     </div>
-                </div>
-        </div>
 
-    </div>
+        </div>
 @endsection
