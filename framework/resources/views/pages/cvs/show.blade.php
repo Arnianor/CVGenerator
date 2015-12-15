@@ -81,27 +81,38 @@ function sentenceCase($s)
         }
 
         ?>
-
-        @yield('user')
+        <div class="row">
+            @yield('user')
+        </div>
 
         @if($showWork)
-            @yield('jobs')
+            <div class="row">
+                @yield('jobs')
+            </div>
         @endif
 
         @if($showSkills)
-            @yield('skills')
+            <div class="row">
+                @yield('skills')
+            </div>
         @endif
 
         @if($showLangauges)
-            @yield('languages')
+            <div class="row">
+                @yield('languages')
+            </div>
         @endif
 
         @if($showHobbies)
-            @yield('hobbies')
+            <div class="row">
+                @yield('hobbies')
+            </div>
         @endif
 
         @if($showEducation)
-            @yield('education')
+            <div class="row">
+                @yield('education')
+            </div>
         @endif
 
 
