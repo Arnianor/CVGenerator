@@ -17,13 +17,7 @@
                         <div class="panel-body">
                             <table class="table table-striped task-table">
 
-                                <thead>
-                                <!--
-                                <th>CV</th>
-                                <th>&nbsp;</th>
-                                 -->
-
-                                </thead>
+                                <thead></thead>
                                 <tbody>
                                 <!-- Get all the user's CVs. -->
                                 @foreach ($cvs as $cv)
@@ -74,33 +68,31 @@
                         <!-- Create a brand new CV -->
                 @if($centerOnPage)
                     <div class="col-md">
-                        @else
-                            <div class="col-md-6">
-                                @endif
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
-                                            Want to make a brand new one?
-                                        </div>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div>
-                                            <!--
-                                            <img width="140" height="140" class="img-circle" alt="Generic placeholder image" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
-                                            -->
-                                            <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-
-                                            <h2>New CV</h2>
-
-                                            <p>Build a new professional-'ish' looking CV.</p>
-
-                                            <p><a class="btn btn-default" role="button" href="cv">Let's go.</a></p>
-                                        </div>
-                                    </div>
+                @else
+                    <div class="col-md-6">
+                @endif
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Want to make a brand new one?
                                 </div>
                             </div>
+                            <div class="panel-body">
+                                <div>
+                                    <!--
+                                    <img width="140" height="140" class="img-circle" alt="Generic placeholder image" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                    -->
+                                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
 
+                                    <h2>New CV</h2>
+
+                                    <p>Build a new professional-'ish' looking CV.</p>
+
+                                    <p><a class="btn btn-default" role="button" href="cv">Let's go.</a></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
+            </div>
         </div>
 @endsection

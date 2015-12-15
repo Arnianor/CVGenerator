@@ -1,6 +1,6 @@
 @section('user')
 
-    <div class="panel panel-danger">
+    <div class="panel panel-default cv-user">
         <div class="panel-heading">
             <div class="panel-title">About me</div>
         </div>

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @include('pages.sections.display.user')
 @include('pages.sections.display.jobs')
 @include('pages.sections.display.hobbies')
@@ -34,6 +35,7 @@ function sentenceCase($s)
 
 @section('content')
     <link rel="stylesheet" href="{{ URL::asset('assets/css/cvs.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/templates/professional.css') }}">
 
     <header class="page-header">
         <h1>{{$cv->name}}</h1>

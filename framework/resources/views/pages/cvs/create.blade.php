@@ -10,7 +10,7 @@
 @include('pages.sections.creation.user')
 
 @section('content')
-
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/cvs.css') }}">
     <div class="page-title">
         <h1>Create a new CV</h1>
     </div>

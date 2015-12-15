@@ -1,6 +1,6 @@
 @section('user')
 
-    <div class="row">
+    <div class="row cv-user">
 
 
         <div class="panel panel-danger">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 personal-details">
+                <div class="col-md-6 personal-details">
                     <div class='form-group' {!! $errors->has('surname') ? 'has-error' : '' !!} >
                         {!! Form::label('surname', 'Surname') !!}
                         {!! Form::text('surname','Samuels',['required', 'class' => 'form-control', 'placeholder' => 'Samuels']) !!}
@@ -62,10 +62,9 @@
                 </div>
 
 
-                <div class="col-md-2 personal-contact">
+                <div class="col-md-6 personal-contact">
 
                     <div class="personal-contact-pysical">
-
 
                         <div class='form-group' {!! $errors->has('address') ? 'has-error' : '' !!} >
                             {!! Form::label('address', 'Address') !!}
@@ -73,35 +72,10 @@
                             {!! $errors->first('address', '<small class="help-block">:message</small>') !!}
                         </div>
 
-                        <div class="hidden">
-                            <div class='form-group' {!! $errors->has('street') ? 'has-error' : '' !!} >
-                                {!! Form::label('street', 'Street') !!}
-                                {!! Form::text('street','',['class' => 'form-control', 'placeholder' => 'Chandler Avenue 45']) !!}
-                                {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
-                            </div>
-
-                            <div class='form-group' {!! $errors->has('postalCode') ? 'has-error' : '' !!} >
-                                {!! Form::label('postalCode', 'Postal Code') !!}
-                                {!! Form::text('postalCode','',['class' => 'form-control', 'placeholder' => '12225']) !!}
-                                {!! $errors->first('postalCode', '<small class="help-block">:message</small>') !!}
-                            </div>
-
-                            <div class='form-group' {!! $errors->has('locality') ? 'has-error' : '' !!} >
-                                {!! Form::label('city', 'City') !!}
-                                {!! Form::text('city','',['class' => 'form-control', 'placeholder' => 'New Laraville']) !!}
-                                {!! $errors->first('locality', '<small class="help-block">:message</small>') !!}
-                            </div>
-
-                            <div class='form-group' {!! $errors->has('country') ? 'has-error' : '' !!} >
-                                {!! Form::label('country', 'Country') !!}
-                                {!! Form::text('country','',['class' => 'form-control', 'placeholder' => 'Toomuchlinuxland']) !!}
-                                {!! $errors->first('country', '<small class="help-block">:message</small>') !!}
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                <div class="col-md-3 personal-contact">
+                <div class="col-md-6 personal-contact">
                     <div class="personal-contact-digital">
                         <div class='form-group' {!! $errors->has('mail') ? 'has-error' : '' !!} >
                             {!! Form::label('mail', 'E-Mail') !!}
