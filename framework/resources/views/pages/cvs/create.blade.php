@@ -16,6 +16,7 @@
     </div>
 
     {!! Form::open() !!}
+
     @yield('user')
 
     @yield('jobs')
@@ -27,7 +28,6 @@
     @yield('education')
 
     @yield('hobbies')
-
 
     {!! Form::submit('Build my CV!',['class' => 'btn btn-default btn-block']) !!}
     {!! Form::close() !!}

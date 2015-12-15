@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('pages.sections.display.jobs')
 <?php
 function sentenceCase($s)
 {
@@ -75,33 +75,7 @@ function sentenceCase($s)
         ?>
 
         @if($showWork)
-            <div class="panel panel-default cv-work">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        Work Experience
-                    </div>
-                </div>
-
-                <div class="panel-body">
-                    @foreach($workSection as $job)
-                    @if(count($job) != 0)
-                            <!-- {{dump($job[0])}} -->
-                    <h2> {{$job[0]['title']}} at {{$job[0]['name']}}</h2>
-                    <h4>Resposabilities: {{$job[0]['description']}}</h4>
-                    <h6>From {{$job[0]['start_date']}} to {{$job[0]['end_date']}}</h6>
-
-                    <!--
-                            {{$job[0]['name']}}
-                    {{$job[0]['location']}}
-                    {{$job[0]['title']}}
-                    {{$job[0]['description']}}
-                    {{$job[0]['start_date']}}
-                    {{$job[0]['end_date']}}
-                            -->
-                    @endif
-                    @endforeach
-                </div>
-            </div>
+                @yield('jobs')
         @endif
 
         @if($showSkills)
@@ -139,7 +113,7 @@ function sentenceCase($s)
                     @if(count($language) != 0)
                             <!-- {{dump($language[0])}} -->
 
-                    <h2> I speak {{$job[0]['title']}}, with a kownledge level of {{$language[0]['level']}}</h2>
+                    <h2> I speak {{$language[0]['name']}}, with a kownledge level of {{$language[0]['level']}}</h2>
                     <h4>And obtained the following certification: {{$language[0]['creditation']}}</h4>
                     <!--
                             {{$language[0]['name']}}
@@ -185,8 +159,8 @@ function sentenceCase($s)
                             <!-- {{dump($education[0])}} -->
 
                     <h2> {{$education[0]['title']}} at {{$education[0]['name']}}</h2>
-                    <h4>Activities: {{$job[0]['description']}}</h4>
-                    <h6>From {{$job[0]['start_date']}} to {{$job[0]['end_date']}}</h6>
+                    <h4>Activities: {{$education[0]['description']}}</h4>
+                    <h6>From {{$education[0]['start_date']}} to {{$education[0]['end_date']}}</h6>
                     <!--
                             {{$education[0]['name']}}
                     {{$education[0]['location']}}
