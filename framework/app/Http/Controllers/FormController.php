@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FormRequest;
+use App\Http\Controllers\Controller;
 
 class FormController extends Controller
 {
@@ -14,6 +15,6 @@ class FormController extends Controller
 	
 	public function postForms(FormRequest $request)
 	{
-		return view('formValidatedView');
+		return view('CVView');
 	}
 }

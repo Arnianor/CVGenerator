@@ -2,7 +2,6 @@
 
 @section('head')
 	<title>Formulaires</title>
-	
 @stop
 
 @section('content')

@@ -1,0 +1,19 @@
+/* Define page size. Requires print-area adjustment! */
+body {
+    margin:     0;
+    padding:    0;
+    width:      21cm;
+    height:     29.7cm;
+}
+
+/* Printable area */
+#print-area {
+    position:   relative;
+    top:        1cm;
+    left:       1cm;
+    width:      19cm;
+    height:     27.6cm;
+
+    font-size:      10px;
+    font-family:    Arial;
+}

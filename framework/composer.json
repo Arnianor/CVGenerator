@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
 		"laravelcollective/html": "5.1.*",
         "barryvdh/laravel-ide-helper": "v2.1.0",
-        "doctrine/dbal": "^2.5"
+        "doctrine/dbal": "^2.5",
+        "mikehaertl/phpwkhtmltopdf": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

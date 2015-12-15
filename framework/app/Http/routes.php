@@ -13,4 +13,15 @@
 
 Route::get('/', 'WelcomeController@index');
 
+//Route::get('formulaire', ['as' => 'formulaire', 'uses' => 'FormController@getForms']);
+
+//Route::post('formulaire', ['as' => 'formulaire', 'uses' => 'FormController@postForms']);
+
+Route::get('CV', ['as' => 'CV', 'uses' => 'CVController@index']);
+
+//Route::post('print', ['as' => 'print', 'uses' => 'PrintController@postPrint']);
+
 Route::controller('formulaire/forms', 'FormController');
+
+//Route::controller('print', 'PrintController')
+?>
