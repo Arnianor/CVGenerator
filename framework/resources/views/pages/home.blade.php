@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+        <!-- TODO Change the homepage to something more flashy -->
+        <!-- Example: http://getbootstrap.com/examples/cover/ -->
+
     <div class="jumbotron">
         <h1>Welcome to CVGenerator</h1>
 
