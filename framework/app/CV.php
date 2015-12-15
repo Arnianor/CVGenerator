@@ -5,7 +5,7 @@ namespace App;
 use DB;
 use Illuminate\Database\Eloquent\Model;
 
-class CV extends Model
+class Cv extends Model
 {
 
     /**
@@ -14,6 +14,13 @@ class CV extends Model
      * @var string
      */
     protected $table = 'cvs';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','creation_date'];
 
     /**
      * Many to One relation.
@@ -26,11 +33,11 @@ class CV extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function sections()
     {
-        return $this->hasMany(Section::class);
+        return $this->belongsToMany(Section::class);
     }
 
     /**
@@ -52,7 +59,7 @@ class CV extends Model
      */
     public function retriveSections()
     {
-        $sections = Section::where('cv_id',$this->id)->get();
+        $sections = $this->sections()->where('cv_id',$this->id)->get();
 
         return $sections;
     }

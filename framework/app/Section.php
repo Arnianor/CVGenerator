@@ -15,6 +15,13 @@ class Section extends Model
     protected $table = 'sections';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['type'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this section belongs to.
      *
@@ -27,10 +34,61 @@ class Section extends Model
 
     /**
      * Retrive the CV this section belongs to.
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function cv()
+    public function cvs()
     {
-        return $this->belongsTo(CV::class);
+        return $this->belongsToMany(Cv::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function skill()
+    {
+        return $this->hasOne(Skill::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function hobby()
+    {
+        return $this->hasOne(Hobby::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function job()
+    {
+        return $this->hasOne(Work::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function language()
+    {
+        return $this->hasOne(Language::class);
+    }
+
+    /**
+     * One-to-one relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function education()
+    {
+        return $this->hasOne(Education::class);
     }
 }

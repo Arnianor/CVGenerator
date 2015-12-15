@@ -1,0 +1,25 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 40px;
+	text-align: center;
+}
+
+.glyphicon {
+    font-size: 80px;
+}
+
+footer {
+    text-align: center;
+}
+
+.navbar-default{
+	background-color: white;
+}
+
+.footer{
+	clear: both;
+	position: fixed;
+	bottom: 0;
+	left: 45%;
+	
+}

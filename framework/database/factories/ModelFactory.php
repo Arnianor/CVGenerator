@@ -35,7 +35,7 @@ $factory->define(App\Template::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\CV::class, function (Faker\Generator $faker) {
+$factory->define(App\Cv::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'creation_date' => $faker->date('d.m.Y'),

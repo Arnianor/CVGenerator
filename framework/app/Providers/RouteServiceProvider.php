@@ -24,8 +24,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
-
+        // Instruct Laravel to retrieve the CV model that corresponds to a
+        // given ID whenever it sees {cv} in a route declaration
+        $router->model('cv', 'App\CV');
         parent::boot($router);
     }
 

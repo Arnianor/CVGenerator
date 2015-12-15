@@ -15,6 +15,13 @@ class Hobby extends Model
     protected $table = 'hobbies';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['text'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this hobby belongs to.
      *
@@ -32,6 +39,16 @@ class Hobby extends Model
      */
     public function cv()
     {
-        return $this->belongsTo(CV::class);
+        return $this->belongsTo(Cv::class);
+    }
+
+    /**
+     * Retrieve the Section this belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
     }
 }

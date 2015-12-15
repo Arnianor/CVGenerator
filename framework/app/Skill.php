@@ -15,6 +15,13 @@ class Skill extends Model
     protected $table = 'skills';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','level','description'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this skill belongs to.
      *
@@ -32,6 +39,16 @@ class Skill extends Model
      */
     public function cv()
     {
-        return $this->belongsTo(CV::class);
+        return $this->belongsTo(Cv::class);
+    }
+
+    /**
+     * Retrieve the Section this belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
     }
 }

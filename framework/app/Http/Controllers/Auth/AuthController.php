@@ -24,6 +24,12 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
+     * Route to redirect to after sucessful registration
+     * @var string
+     */
+    protected $redirectTo = '/cvs';
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void

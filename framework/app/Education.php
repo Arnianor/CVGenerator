@@ -15,6 +15,13 @@ class Education extends Model
     protected $table = 'educations';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name','location','title','description','start_date','end_date'];
+
+    /**
      * One to Many relation.
      * Retrieve the user this education belongs to.
      *
@@ -32,6 +39,16 @@ class Education extends Model
      */
     public function cv()
     {
-        return $this->belongsTo(CV::class);
+        return $this->belongsTo(Cv::class);
+    }
+
+    /**
+     * Retrieve the Section this belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
     }
 }

@@ -29,7 +29,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password','surname','lastname','date_birth','telephone','address','nationality','work_permit','driver_permit'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -37,19 +37,6 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-
-
-    /**
-     * Retrive all the user models. Used for seeding.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
-     */
-    public static function retrieveUsers()
-    {
-        $users = User::all();
-
-        return $users;
-    }
 
     /**
      * Retrive all the user's CV models..
@@ -70,7 +57,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function cvs()
     {
-        return $this->hasMany(CV::class);
+        return $this->hasMany(Cv::class);
     }
 
     /**
@@ -110,7 +97,7 @@ class User extends Model implements AuthenticatableContract,
      */
     public function jobs()
     {
-        return $this->hasMany(Job::class);
+        return $this->hasMany(Work::class);
     }
 
     /**

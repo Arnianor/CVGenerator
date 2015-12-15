@@ -13,10 +13,11 @@ class TemplatesTableSeeder extends Seeder
         //$faker = Faker\Factory::create();
         //factory(App\Template::class,5)->make();
 
-        $users = \App\User::retrieveUsers();
+        $users = \App\User::all();
         foreach($users as $user)
         {
-            factory(App\Template::class)->create(['user_id' => $user->id]);
+            $template = factory(App\Template::class)->make();
+            $user->templates()->save($template);
         }
 
     }

@@ -30,3 +30,10 @@ _ide_helper_models.php
 #############
 
 #**composer.*
+
+#############
+# Node files
+#############
+
+# A work-around the windows file path length limitation
+node_modules.7z
