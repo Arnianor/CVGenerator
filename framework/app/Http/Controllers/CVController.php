@@ -86,6 +86,7 @@ class CVController extends Controller
             'surname' => $request->surname,
             'lastname' => $request->lastname,
             'address' => $request->address,
+            'telephone' => $request->telephone,
         ]);
 
         // Build the subsections first.
