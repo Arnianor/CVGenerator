@@ -1,34 +1,26 @@
 @section('languages')
 
-    <div class="page-header">
-        <h1>Languages</h1>
-    </div>
-
-    <div class="row">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="panel-title">Languages</div>
+    <div class="panel panel-default cv-languages">
+        <div class="panel-heading">
+            <div class="panel-title">
+                Languages
             </div>
-            <div class="panel-body">
+        </div>
 
-                <div class='form-group' {!! $errors->has('language') ? 'has-error' : '' !!} >
-                    {!! Form::label('language', 'Langue') !!}
-                    {!! Form::text('language','Romanian',['class' => 'form-control', 'placeholder' => 'Langue connue']) !!}
-                    {!! $errors->first('language', '<small class="help-block">:message</small>') !!}
-                </div>
+        <div class="panel-body">
+            @foreach($languageSection as $language)
+            @if(count($language) != 0)
+                    <!-- {{dump($language[0])}} -->
 
-                <div class='form-group' {!! $errors->has('languageDegree') ? 'has-error' : '' !!} >
-                    {!! Form::label('languageDegree', 'Diplôme') !!}
-                    {!! Form::text('languageDegree','Awesomitude',['class' => 'form-control', 'placeholder' => 'Diplôme de langue']) !!}
-                    {!! $errors->first('languageDegree', '<small class="help-block">:message</small>') !!}
-                </div>
-
-                <div class='form-group' {!! $errors->has('languageLevel') ? 'has-error' : '' !!} >
-                    {!! Form::label('languageLevel', 'Niveau européen') !!}
-                    {!! Form::text('languageLevel','100',['class' => 'form-control', 'placeholder' => 'Niveau européen de la langue']) !!}
-                    {!! $errors->first('languageLevel', '<small class="help-block">:message</small>') !!}
-                </div>
-            </div>
+            <h2> I speak {{$language[0]['name']}}, with a kownledge level of {{$language[0]['level']}}</h2>
+            <h4>And obtained the following certification: {{$language[0]['creditation']}}</h4>
+            <!--
+                            {{$language[0]['name']}}
+            {{$language[0]['level']}}
+            {{$language[0]['creditation']}}
+                    -->
+            @endif
+            @endforeach
         </div>
     </div>
 

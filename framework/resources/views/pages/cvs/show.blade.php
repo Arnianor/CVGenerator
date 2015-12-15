@@ -1,5 +1,11 @@
 @extends('layouts.app')
+@include('pages.sections.display.user')
 @include('pages.sections.display.jobs')
+@include('pages.sections.display.hobbies')
+@include('pages.sections.display.education')
+@include('pages.sections.display.skills')
+@include('pages.sections.display.languages')
+
 <?php
 function sentenceCase($s)
 {
@@ -74,105 +80,26 @@ function sentenceCase($s)
 
         ?>
 
+        @yield('user')
+
         @if($showWork)
-                @yield('jobs')
+            @yield('jobs')
         @endif
 
         @if($showSkills)
-            <div class="panel panel-default cv-skills">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        My skills
-                    </div>
-                </div>
-
-                <div class="panel-body">
-                    @foreach($skillSection as $skill)
-                    @if(count($skill) != 0)
-                            <!-- {{dump($skill[0])}} -->
-
-                    {{$skill[0]['name']}}
-                    {{$skill[0]['level']}}
-                    {{$skill[0]['description']}}
-                    @endif
-                    @endforeach
-                </div>
-            </div>
+            @yield('skills')
         @endif
 
         @if($showLangauges)
-            <div class="panel panel-default cv-languages">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        Languages
-                    </div>
-                </div>
-
-                <div class="panel-body">
-                    @foreach($languageSection as $language)
-                    @if(count($language) != 0)
-                            <!-- {{dump($language[0])}} -->
-
-                    <h2> I speak {{$language[0]['name']}}, with a kownledge level of {{$language[0]['level']}}</h2>
-                    <h4>And obtained the following certification: {{$language[0]['creditation']}}</h4>
-                    <!--
-                            {{$language[0]['name']}}
-                    {{$language[0]['level']}}
-                    {{$language[0]['creditation']}}
-                            -->
-                    @endif
-                    @endforeach
-                </div>
-            </div>
+            @yield('languages')
         @endif
 
         @if($showHobbies)
-            <div class="panel panel-default cv-hobbies">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        My Hobbies
-                    </div>
-                </div>
-
-                <div class="panel-body">
-                    @foreach($hobbySection as $hobby)
-                    @if(count($hobby) != 0)
-                            <!-- {{dump($hobby[0])}} -->
-                    <h2>{{$hobby[0]['text']}}</h2>
-                    @endif
-                    @endforeach
-                </div>
-            </div>
+            @yield('hobbies')
         @endif
 
         @if($showEducation)
-            <div class="panel panel-default cv-education">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        My Education and Certification
-                    </div>
-                </div>
-
-                <div class="panel-body">
-                    @foreach($educationSection as $education)
-                    @if(count($education) != 0)
-                            <!-- {{dump($education[0])}} -->
-
-                    <h2> {{$education[0]['title']}} at {{$education[0]['name']}}</h2>
-                    <h4>Activities: {{$education[0]['description']}}</h4>
-                    <h6>From {{$education[0]['start_date']}} to {{$education[0]['end_date']}}</h6>
-                    <!--
-                            {{$education[0]['name']}}
-                    {{$education[0]['location']}}
-                    {{$education[0]['title']}}
-                    {{$education[0]['description']}}
-                    {{$education[0]['start_date']}}
-                    {{$education[0]['end_date']}}
-                            -->
-                    @endif
-                    @endforeach
-                </div>
-            </div>
+            @yield('education')
         @endif
 
 
