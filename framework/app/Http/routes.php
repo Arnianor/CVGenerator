@@ -35,3 +35,5 @@ Route::delete('/cv/{cv}','CVController@destroy');
 Route::get('cvs/section','SectionController@index');
 Route::post('cvs/section','SectionController@store');
 Route::delete('cvs/section/{section}','SectionController@destroy');
+
+// TODO Add routes for subsections and template?
