@@ -55,7 +55,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', $_SERVER['MYSQL_HOST']),
-            
+            'unix_socket'   => '/var/run/php5-fpm.sock',
             'database'  => env('DB_DATABASE', $_SERVER['MYSQL_DATABASE']),
             'username'  => env('DB_USERNAME', $_SERVER['MYSQL_USERNAME']),
             'password'  => env('DB_PASSWORD', $_SERVER['MYSQL_PASSWORD']),
