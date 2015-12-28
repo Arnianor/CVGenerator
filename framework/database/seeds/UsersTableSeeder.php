@@ -44,7 +44,7 @@ class UserTableSeeder extends Seeder
         factory(App\User::class,5)->create()->each(function($u){
             $u->templates()->save(factory(App\Template::class)->make());
             // Cannot continue as the foreign key integrities are not respected afterwards.
-            $u->cvs()->save(factory(App\CV::class)->make());
+            $u->cvs()->save(factory(App\Cv::class)->make());
             $u->sections()->save(factory(App\Section::class)->make());
             $u->skills()->save(factory(App\Skill::class)->make());
             $u->hobbies()->save(factory(App\Hobby::class)->make());

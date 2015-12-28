@@ -10,7 +10,7 @@ namespace App\Repositories;
 
 use App\Section;
 use App\User;
-use App\CV;
+use App\Cv;
 
 
 class SectionRepository

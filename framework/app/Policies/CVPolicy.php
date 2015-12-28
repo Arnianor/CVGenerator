@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\CV;
+use App\Cv;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 

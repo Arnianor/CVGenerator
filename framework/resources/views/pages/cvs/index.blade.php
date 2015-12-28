@@ -29,7 +29,7 @@
                                         <div class="btn-group btn-group-justified">
                                             <!-- CV Show Button -->
                                             <td>
-                                                <form action="/cv/{{$cv->id}}" method="get">
+                                                <form action="{{ url('/cv/' . $cv->id) }}" method="get">
                                                     {{csrf_field()}}
                                                     {{method_field('SHOW')}}
 
@@ -43,7 +43,7 @@
 
                                             <!-- CV Delete Button -->
                                             <td>
-                                                <form action="/cv/{{ $cv->id }}" method="POST">
+                                                <form action="{{ url('/cv/' . $cv->id) }}" method="POST">
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
 

@@ -9,7 +9,7 @@
 namespace App\Repositories;
 
 use App\User;
-use App\CV;
+use App\Cv;
 
 class CVRepository
 {

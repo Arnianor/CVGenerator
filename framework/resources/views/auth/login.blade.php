@@ -13,7 +13,7 @@
 					@include('common.errors')
 
 					<!-- New Task Form -->
-					<form action="/auth/login" method="POST" class="form-horizontal">
+					<form action="{{ url('/auth/login') }}" method="POST" class="form-horizontal">
 						{{ csrf_field() }}
 
 						<!-- E-Mail Address -->

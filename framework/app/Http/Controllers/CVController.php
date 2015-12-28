@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\CV;
+use App\Cv;
 use App\Education;
 use App\Hobby;
 use App\Language;
